@@ -100,11 +100,8 @@ export const defaultCVData: CVContent = {
       company: "Ho Chi Minh University of Technology",
       role: "Computer Science",
       duration: "2024 - present",
-      description: "Leading the development of a real-time collaborative workspace platform.",
+      description: "My learning journey continues here.",
       bullets: [
-        "Architected and implemented high-performance real-time features using WebSockets, reducing latency by 40%.",
-        "Mentored 4 junior and mid-level developers, establishing best practices for clean code and CI/CD pipelines.",
-        "Optimized backend queries and database indexes, boosting application loading speeds by 30%."
       ]
     }
   ],
