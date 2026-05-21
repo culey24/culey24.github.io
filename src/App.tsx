@@ -104,6 +104,45 @@ function App() {
               </section>
             )}
 
+            {/* Honors & Awards Section */}
+            {currentContent.awards && currentContent.awards.length > 0 && (
+              <section className="cv-section" id="awards-section">
+                <h2 className="section-title">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="title-icon"
+                  >
+                    <circle cx="12" cy="8" r="7" />
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                  </svg>
+                  <span>Honors & Awards</span>
+                </h2>
+                <div className="awards-list">
+                  {currentContent.awards.map((award) => (
+                    <div key={award.id} className="award-item">
+                      <div className="award-header">
+                        <span className="award-title">{award.title}</span>
+                        <span className="award-date">{award.date}</span>
+                      </div>
+                      {award.issuer && (
+                        <div className="award-issuer">{award.issuer}</div>
+                      )}
+                      {award.details && (
+                        <div className="award-details">{award.details}</div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {/* Languages Section */}
             {currentContent.languages && currentContent.languages.length > 0 && (
               <section className="cv-section" id="languages-section">

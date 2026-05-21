@@ -60,6 +60,14 @@ export interface PublicationItem {
   description?: string;
 }
 
+export interface AwardItem {
+  id: string;
+  title: string;
+  date: string;
+  issuer?: string;
+  details?: string;
+}
+
 export interface CVContent {
   personalInfo: PersonalInfo;
   summary: string;
@@ -69,6 +77,7 @@ export interface CVContent {
   education: EducationItem[];
   languages: LanguageItem[];
   publications?: PublicationItem[];
+  awards?: AwardItem[];
 }
 
 export const defaultCVData: CVContent = {
@@ -133,7 +142,7 @@ export const defaultCVData: CVContent = {
       school: "Ho Chi Minh City University of Technology",
       degree: "Bachelor of Science in Computer Science and Engineering",
       duration: "2024 - present",
-      details: "GPA: 3.9. Have two academic scholarships (241, 242)."
+      details: "GPA: 3.9"
     }
   ],
   languages: [
@@ -149,6 +158,22 @@ export const defaultCVData: CVContent = {
       date: "Nov 22, 2025",
       link: "https://doi.org/10.1007/978-981-95-4963-4_18",
       description: "Proposed a voice cloning method for data-scarce scenarios, requiring only 10–30 minutes of speech and optimized for low-complexity environments like Google Colab. By leveraging So-VITS-SVC, a robust voice conversion model, and the acoustic precision of Parselmouth, the system achieves high-quality, low-latency voice synthesis suitable for both research and practical applications."
+    }
+  ],
+  awards: [
+    {
+      id: "award-2",
+      title: "First Prize | The 9th OISP Science and Technology Symposium (OSTS 2025)",
+      date: "July 2025",
+      issuer: "Ho Chi Minh City University of Technology (HCMUT)",
+      details: "Awarded for the good performance of the paper: 'Towards Cost-Effective Voice Cloning System for Vietnamese TTS: A Case Study at HCMUT'"
+    },
+    {
+      id: "award-1",
+      title: "Academic Incentive Scholarship",
+      date: "Semester 241, 242",
+      issuer: "Ho Chi Minh City University of Technology (HCMUT)",
+      details: "Awarded for good academic performance"
     }
   ]
 };
