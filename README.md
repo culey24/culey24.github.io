@@ -1,75 +1,48 @@
-# React + TypeScript + Vite
+# Interactive CV Website (`culey24.github.io`)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a professional, interactive, and bilingual CV website designed for deployment to GitHub Pages. It features a modern, clean, responsive design with full dark-mode support and optimized print styling for exporting to PDF.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. **Bilingual Support (VI / EN)**: Easily toggle between Vietnamese and English versions of your resume with a single click.
+2. **Premium Dark Mode**: Responsive styling supporting dark mode (auto-detected from system settings, with a manual toggle override).
+3. **Live Customizer (Edit Mode)**:
+   - Edit your name, contact information, profile summary, work experience, projects, skills, education, and language proficiencies in real-time directly on the page.
+   - All changes are immediately reflected in the preview and auto-saved to your browser's `localStorage` so you don't lose progress.
+4. **Import/Export JSON**:
+   - Download your complete CV configuration as a JSON file.
+   - Import a previously saved JSON file to load your details instantly on other devices.
+   - Reset to the default template anytime.
+5. **Print & PDF Export**: Optimized print stylesheet to produce a clean, professional, compact A4 layout when printing or saving as a PDF via the browser.
 
-## React Compiler
+## Getting Started
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Prerequisites
 
-Note: This will impact Vite dev & build performances.
+You need [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) installed on your machine.
 
-## Expanding the ESLint configuration
+### Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Run Locally
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the development server:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn dev
 ```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build for Production
+
+Compile the TypeScript files and bundle the application with Vite:
+
+```bash
+yarn build
+```
+
+The output will be placed in the `dist/` directory, which is ready to be hosted on GitHub Pages or any static website hosting provider.
