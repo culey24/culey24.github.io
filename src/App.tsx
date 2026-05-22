@@ -6,8 +6,18 @@ import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
 import { Publications } from './components/Publications';
 import { Skills } from './components/Skills';
+import { HarvardCV } from './components/HarvardCV';
 
 function App() {
+  const [currentPath, setCurrentPath] = useState(() => {
+    const path = window.location.pathname;
+    const hash = window.location.hash;
+    if (path === '/cv' || path.endsWith('/cv') || path.endsWith('/cv/') || hash === '#/cv') {
+      return '/cv';
+    }
+    return '/';
+  });
+
   const [isDark, setIsDark] = useState<boolean>(() => {
     const localTheme = localStorage.getItem('theme');
     if (localTheme) {
@@ -27,11 +37,30 @@ function App() {
     }
   }, [isDark]);
 
+  useEffect(() => {
+    const handleLocationChange = () => {
+      const path = window.location.pathname;
+      const hash = window.location.hash;
+      if (path === '/cv' || path.endsWith('/cv') || path.endsWith('/cv/') || hash === '#/cv') {
+        setCurrentPath('/cv');
+      } else {
+        setCurrentPath('/');
+      }
+    };
+
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
+    };
+  }, []);
+
   const currentContent: CVContent = defaultCVData;
 
-  const handlePrint = () => {
-    window.print();
-  };
+  if (currentPath === '/cv') {
+    return <HarvardCV data={currentContent} />;
+  }
 
   return (
     <>
@@ -40,7 +69,6 @@ function App() {
           info={currentContent.personalInfo}
           isDark={isDark}
           setIsDark={setIsDark}
-          onPrint={handlePrint}
         />
 
         <main className="cv-body">

@@ -68,6 +68,24 @@ export interface AwardItem {
   details?: string;
 }
 
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+  link?: string;
+}
+
+export interface WorkspaceSpecs {
+  computer: string;
+  os: string;
+  editor: string;
+  terminal: string;
+  gear: string[];
+}
+
 export interface CVContent {
   personalInfo: PersonalInfo;
   summary: string;

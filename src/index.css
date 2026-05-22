@@ -8,21 +8,23 @@
   --text-secondary: #475569;
   --text-muted: #64748b;
   --border-color: #e2e8f0;
-  
-  --accent-primary: #6366f1; /* Indigo */
-  --accent-secondary: #8b5cf6; /* Violet */
+
+  --accent-primary: #6366f1;
+  /* Indigo */
+  --accent-secondary: #8b5cf6;
+  /* Violet */
   --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   --accent-light: rgba(99, 102, 241, 0.08);
   --accent-border: rgba(99, 102, 241, 0.2);
-  
+
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  
+
   /* Fonts */
   --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
   --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  
+
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -33,10 +35,10 @@
   --text-secondary: #cbd5e1;
   --text-muted: #94a3b8;
   --border-color: #1f2937;
-  
+
   --accent-light: rgba(139, 92, 246, 0.15);
   --accent-border: rgba(139, 92, 246, 0.3);
-  
+
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
@@ -97,6 +99,7 @@ body {
     padding: 24px;
     border-radius: 16px;
   }
+
   .cv-container.editor-open {
     max-width: 100%;
     margin-right: 20px;
@@ -131,7 +134,10 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   color: var(--text-primary);
 }
@@ -648,11 +654,13 @@ a.contact-item:hover {
 }
 
 /* Education & Languages sections */
-.edu-item, .lang-list-item {
+.edu-item,
+.lang-list-item {
   margin-bottom: 16px;
 }
 
-.edu-item:last-child, .lang-list-item:last-child {
+.edu-item:last-child,
+.lang-list-item:last-child {
   margin-bottom: 0;
 }
 
@@ -781,6 +789,7 @@ a.contact-item:hover {
   from {
     transform: translateX(100%);
   }
+
   to {
     transform: translateX(0);
   }
@@ -1334,5 +1343,372 @@ a.contact-item:hover {
   .edu-item,
   .publication-item {
     page-break-inside: avoid;
+  }
+}
+
+/* ==========================================================================
+   Harvard CV Template Styling
+   ========================================================================== */
+.harvard-cv-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Lora', 'Georgia', 'Times New Roman', serif;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease;
+}
+
+[data-theme='dark'] .harvard-cv-wrapper {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.harvard-cv-document {
+  width: 100%;
+  max-width: 850px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  padding: 50px 60px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  line-height: 1.5;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Floating Actions Bar */
+.harvard-cv-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  justify-content: center;
+  width: 100%;
+  max-width: 850px;
+}
+
+.harvard-print-btn,
+.harvard-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+}
+
+.harvard-print-btn {
+  background: var(--accent-gradient);
+  color: #ffffff;
+  border: none;
+}
+
+.harvard-print-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.harvard-back-btn {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.harvard-back-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  transform: translateY(-1px);
+}
+
+/* Header Blocks */
+.harvard-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.harvard-name {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.harvard-contact,
+.harvard-links {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.harvard-contact span,
+.harvard-links span {
+  user-select: none;
+}
+
+.harvard-contact a,
+.harvard-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: all 0.2s ease;
+}
+
+.harvard-contact a:hover,
+.harvard-links a:hover {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+}
+
+/* Section Formatting */
+.harvard-section {
+  margin-bottom: 24px;
+}
+
+.harvard-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  font-family: 'Lora', 'Georgia', 'Times New Roman', serif;
+}
+
+.harvard-section-divider {
+  height: 1px;
+  background-color: var(--text-primary);
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+/* Items formatting */
+.harvard-item {
+  margin-bottom: 16px;
+}
+
+.harvard-item:last-child {
+  margin-bottom: 0;
+}
+
+.harvard-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.harvard-item-bold {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.harvard-item-italic {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.harvard-item-right {
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.harvard-details-text {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  text-align: justify;
+}
+
+.harvard-tech-used {
+  font-size: 12.5px;
+  margin-top: 4px;
+}
+
+.harvard-bullets {
+  padding-left: 20px;
+  margin-top: 6px;
+}
+
+.harvard-bullets li {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+/* Publications */
+.harvard-publication-item {
+  margin-bottom: 12px;
+}
+
+.harvard-pub-citation {
+  font-size: 13.5px;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.harvard-pub-authors {
+  font-weight: 500;
+}
+
+.harvard-pub-title {
+  font-style: italic;
+}
+
+.harvard-pub-link-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.harvard-pub-link {
+  color: var(--accent-primary) !important;
+  word-break: break-all;
+}
+
+.harvard-pub-desc {
+  font-style: italic;
+  margin-top: 4px;
+  padding-left: 12px;
+  border-left: 2px solid var(--border-color);
+}
+
+.harvard-proj-links {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.harvard-proj-links a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.harvard-proj-links a:hover {
+  text-decoration: underline;
+}
+
+/* Skills Grid */
+.harvard-skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.harvard-skills-line {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.harvard-skills-line strong {
+  color: var(--text-primary);
+}
+
+/* Print View Formatting */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  #root {
+    display: block !important;
+    min-height: auto !important;
+  }
+
+  .harvard-cv-wrapper {
+    padding: 0 !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    display: block !important;
+  }
+
+  .harvard-cv-document {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .harvard-cv-actions {
+    display: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .harvard-name {
+    color: #000000 !important;
+  }
+
+  .harvard-contact,
+  .harvard-links {
+    color: #000000 !important;
+  }
+
+  .harvard-contact a,
+  .harvard-links a {
+    color: #000000 !important;
+  }
+
+  .harvard-section-title {
+    color: #000000 !important;
+  }
+
+  .harvard-section-divider {
+    background-color: #000000 !important;
+  }
+
+  .harvard-item-bold {
+    color: #000000 !important;
+  }
+
+  .harvard-item-italic,
+  .harvard-item-right,
+  .harvard-details-text,
+  .harvard-bullets li,
+  .harvard-pub-citation,
+  .harvard-skills-line {
+    color: #000000 !important;
+  }
+
+  /* Prevent page breaks inside sections and items */
+  .harvard-section,
+  .harvard-item {
+    page-break-inside: avoid;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .harvard-cv-document {
+    padding: 30px 24px;
+  }
+  
+  .harvard-item-row {
+    flex-direction: column;
+  }
+  
+  .harvard-item-right {
+    margin-top: 2px;
+    align-self: flex-start;
   }
 }
