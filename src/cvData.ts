@@ -28,6 +28,7 @@ export interface ProjectItem {
   technologies: string[];
   link?: string;
   github?: string;
+  bullets?: string[];
 }
 
 export interface SkillCategory {
@@ -111,14 +112,14 @@ export const defaultCVData: CVContent = {
     website: "https://culey24.github.io",
     facebook: "https://www.facebook.com/zabao.quach/"
   },
-  summary: "Computer Science & Engineering sophomore at HCMUT focused on Software Engineering and Artificial Intelligence. Possesses a strong academic and practical interest spanning ML/DL foundations, NLP, and Generative AI systems. Driven to bridge the gap between core machine learning concepts and high-performance software applications.",
+  summary: "A Computer Science & Engineering sophomore at HCMUT with a deep passion for Software Engineering and Artificial Intelligence. My expertise spans ML/DL foundations, NLP, and Generative AI systems. I am highly motivated to bridge the gap between core machine learning research and high-performance software applications to solve complex, real-world problems.",
   experience: [
     {
       id: "school",
       company: "Ho Chi Minh University of Technology",
       role: "Computer Science",
       duration: "2024 - present",
-      description: "My learning journey continues here.",
+      description: "Collaborated as a research member in Unlimited AI research lab (URA) from 2024 to present.",
       bullets: [
       ]
     }
@@ -128,8 +129,14 @@ export const defaultCVData: CVContent = {
       id: "proj-1",
       title: "BKHome Chatbot",
       description: "An interactive chatbot serves as a comprehensive resource for HCMUT, especially for CSE students, providing quick access to essential information, campus guidance, and AI-powered academic support tools.",
+      bullets: [
+        "Optimized searching performance by applying hierarchical indexing on documents.",
+        "Integrated OpenRouter for NLP tasks, validating using Pydantic framework",
+        "Deployed using Google Cloud Run for microservices backend and Vercel for frontend",
+        "Still in development..."
+      ],
       role: "Creator, Lead Developer",
-      technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Python"],
+      technologies: ["Pydantic", "React", "TypeScript", "Node.js", "PostgreSQL"],
       link: "https://bkhome-chatbot.vercel.app/login",
       github: "https://github.com/culey24/bkhome-chatbot"
     }
@@ -143,7 +150,7 @@ export const defaultCVData: CVContent = {
     {
       id: "skill-frame",
       name: "Frameworks & Libraries",
-      items: ["React", "Next.js", "Node.js / Express", "Tailwind CSS"]
+      items: ["Pydantic", "LangChain", "React", "Next.js", "Node.js / Express", "Tailwind CSS"]
     },
     {
       id: "skill-tools",

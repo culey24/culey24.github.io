@@ -58,6 +58,14 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
             <h4 className="project-role">{project.role}</h4>
             <p className="project-desc">{project.description}</p>
             
+            {project.bullets && project.bullets.length > 0 && (
+              <ul className="job-bullets" style={{ marginTop: '4px', marginBottom: '12px' }}>
+                {project.bullets.map((bullet, bIdx) => (
+                  <li key={bIdx}>{bullet}</li>
+                ))}
+              </ul>
+            )}
+            
             {project.technologies && project.technologies.length > 0 && (
               <div className="project-tech">
                 {project.technologies.map((tech, tIdx) => (

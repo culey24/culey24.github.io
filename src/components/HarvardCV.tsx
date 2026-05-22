@@ -5,7 +5,7 @@ interface HarvardCVProps {
 }
 
 export function HarvardCV({ data }: HarvardCVProps) {
-  const { personalInfo, education, experience, projects, publications, awards, skills, languages } = data;
+  const { personalInfo, summary, education, experience, projects, publications, awards, skills, languages } = data;
 
   const handlePrint = () => {
     window.print();
@@ -58,6 +58,15 @@ export function HarvardCV({ data }: HarvardCVProps) {
             )}
           </div>
         </header>
+
+        {/* Summary Section */}
+        {summary && (
+          <section className="harvard-section">
+            <h2 className="harvard-section-title">SUMMARY</h2>
+            <div className="harvard-section-divider"></div>
+            <p className="harvard-details-text">{summary}</p>
+          </section>
+        )}
 
         {/* Education Section */}
         {education && education.length > 0 && (
@@ -159,6 +168,13 @@ export function HarvardCV({ data }: HarvardCVProps) {
                   <span className="harvard-item-right">{proj.role}</span>
                 </div>
                 <p className="harvard-details-text">{proj.description}</p>
+                {proj.bullets && proj.bullets.length > 0 && (
+                  <ul className="harvard-bullets">
+                    {proj.bullets.map((bullet, idx) => (
+                      <li key={idx}>{bullet}</li>
+                    ))}
+                  </ul>
+                )}
                 <p className="harvard-details-text harvard-tech-used">
                   <strong>Technologies:</strong> {proj.technologies.join(', ')}
                 </p>
