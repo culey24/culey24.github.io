@@ -153,6 +153,11 @@ export const defaultCVData: CVContent = {
       items: ["Pydantic", "LangChain", "React", "Next.js", "Node.js / Express", "Tailwind CSS"]
     },
     {
+      id: "skill-mldl",
+      name: "ML/DL",
+      items: ["PyTorch", "TensorFlow", "Scikit-Learn", "NLP", "Generative AI"]
+    },
+    {
       id: "skill-tools",
       name: "Tools",
       items: ["Git & GitHub Actions", "Docker", "PostgreSQL", "Linux"]
