@@ -63,7 +63,7 @@ export function HarvardCV({ data }: HarvardCVProps) {
         {summary && (
           <section className="harvard-section">
             <h2 className="harvard-section-title">SUMMARY</h2>
-            <div className="harvard-section-divider"></div>
+            <hr className="harvard-section-divider" />
             <p className="harvard-details-text">{summary}</p>
           </section>
         )}
@@ -72,7 +72,7 @@ export function HarvardCV({ data }: HarvardCVProps) {
         {education && education.length > 0 && (
           <section className="harvard-section">
             <h2 className="harvard-section-title">EDUCATION</h2>
-            <div className="harvard-section-divider"></div>
+            <hr className="harvard-section-divider" />
             {education.map((edu) => (
               <div key={edu.id} className="harvard-item">
                 <div className="harvard-item-row">
@@ -95,7 +95,7 @@ export function HarvardCV({ data }: HarvardCVProps) {
         {publications && publications.length > 0 && (
           <section className="harvard-section">
             <h2 className="harvard-section-title">RESEARCH & PUBLICATIONS</h2>
-            <div className="harvard-section-divider"></div>
+            <hr className="harvard-section-divider" />
             {publications.map((pub) => (
               <div key={pub.id} className="harvard-item harvard-publication-item">
                 <p className="harvard-pub-citation">
@@ -119,7 +119,7 @@ export function HarvardCV({ data }: HarvardCVProps) {
         {experience && experience.length > 0 && (
           <section className="harvard-section">
             <h2 className="harvard-section-title">EXPERIENCE</h2>
-            <div className="harvard-section-divider"></div>
+            <hr className="harvard-section-divider" />
             {experience.map((exp) => (
               <div key={exp.id} className="harvard-item">
                 <div className="harvard-item-row">
@@ -149,7 +149,7 @@ export function HarvardCV({ data }: HarvardCVProps) {
         {projects && projects.length > 0 && (
           <section className="harvard-section">
             <h2 className="harvard-section-title">PROJECTS</h2>
-            <div className="harvard-section-divider"></div>
+            <hr className="harvard-section-divider" />
             {projects.map((proj) => (
               <div key={proj.id} className="harvard-item">
                 <div className="harvard-item-row">
@@ -187,7 +187,7 @@ export function HarvardCV({ data }: HarvardCVProps) {
         {awards && awards.length > 0 && (
           <section className="harvard-section">
             <h2 className="harvard-section-title">HONORS & AWARDS</h2>
-            <div className="harvard-section-divider"></div>
+            <hr className="harvard-section-divider" />
             {awards.map((award) => (
               <div key={award.id} className="harvard-item">
                 <div className="harvard-item-row">
@@ -208,7 +208,7 @@ export function HarvardCV({ data }: HarvardCVProps) {
         {/* Skills & Languages Section */}
         <section className="harvard-section">
           <h2 className="harvard-section-title">SKILLS & LANGUAGES</h2>
-          <div className="harvard-section-divider"></div>
+          <hr className="harvard-section-divider" />
           <div className="harvard-skills-grid">
             {skills.map((category) => (
               <div key={category.id} className="harvard-skills-line">

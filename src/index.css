@@ -1490,7 +1490,7 @@ a.contact-item:hover {
 }
 
 .harvard-section-divider {
-  height: 0;
+  border: none;
   border-top: 1px solid var(--text-primary);
   opacity: 0.8;
   margin-bottom: 12px;
@@ -1679,7 +1679,7 @@ a.contact-item:hover {
 
   .harvard-section-divider {
     display: block !important;
-    height: 0 !important;
+    border: none !important;
     border-top: 1px solid #111827 !important;
     opacity: 1 !important;
   }
