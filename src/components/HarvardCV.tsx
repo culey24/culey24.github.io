@@ -156,7 +156,7 @@ export function HarvardCV({ data }: HarvardCVProps) {
                   <span className="harvard-item-bold">
                     {proj.title}
                     {proj.link && (
-                      <span className="harvard-proj-links no-print">
+                      <span className="harvard-proj-links">
                         {" "}(<a href={proj.link} target="_blank" rel="noopener noreferrer">Demo</a>
                         {proj.github && (
                           <> | <a href={proj.github} target="_blank" rel="noopener noreferrer">GitHub</a></>

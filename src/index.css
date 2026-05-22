@@ -1490,8 +1490,8 @@ a.contact-item:hover {
 }
 
 .harvard-section-divider {
-  height: 1px;
-  background-color: var(--text-primary);
+  height: 0;
+  border-top: 1px solid var(--text-primary);
   opacity: 0.8;
   margin-bottom: 12px;
 }
@@ -1657,29 +1657,32 @@ a.contact-item:hover {
   }
 
   .harvard-name {
-    color: #000000 !important;
+    color: #111827 !important;
   }
 
   .harvard-contact,
   .harvard-links {
-    color: #000000 !important;
+    color: #4b5563 !important;
   }
 
   .harvard-contact a,
-  .harvard-links a {
-    color: #000000 !important;
+  .harvard-links a,
+  .harvard-proj-links a,
+  .harvard-pub-link {
+    color: #1a56db !important; /* Professional blue for digital PDF links */
+    text-decoration: underline !important;
   }
 
   .harvard-section-title {
-    color: #000000 !important;
+    color: #111827 !important;
   }
 
   .harvard-section-divider {
-    background-color: #000000 !important;
+    border-top-color: #111827 !important;
   }
 
   .harvard-item-bold {
-    color: #000000 !important;
+    color: #111827 !important;
   }
 
   .harvard-item-italic,
@@ -1688,7 +1691,7 @@ a.contact-item:hover {
   .harvard-bullets li,
   .harvard-pub-citation,
   .harvard-skills-line {
-    color: #000000 !important;
+    color: #4b5563 !important;
   }
 
   /* Prevent page breaks inside sections and items */
