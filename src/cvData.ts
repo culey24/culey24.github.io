@@ -160,7 +160,7 @@ export const defaultCVData: CVContent = {
     {
       id: "skill-tools",
       name: "Tools",
-      items: ["Git & GitHub Actions", "Docker", "PostgreSQL", "Linux"]
+      items: ["Git & GitHub Actions", "Docker", "PostgreSQL", "Linux", "LaTeX", "UML"]
     }
   ],
   education: [
