@@ -1678,7 +1678,10 @@ a.contact-item:hover {
   }
 
   .harvard-section-divider {
-    border-top-color: #111827 !important;
+    display: block !important;
+    height: 0 !important;
+    border-top: 1px solid #111827 !important;
+    opacity: 1 !important;
   }
 
   .harvard-item-bold {
