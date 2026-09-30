@@ -17,6 +17,7 @@ function makeIcon(children: ReactNode) {
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden="true"
+        suppressHydrationWarning
         {...props}
       >
         {children}

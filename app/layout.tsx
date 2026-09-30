@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'culey24.github.io',
+  title: "Quach Gia Bao's Homepage",
   description: 'Quach Gia Bao — CS Student',
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: '/favicon.svg?v=2' },
 };
 
 const themeInit = `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();`;

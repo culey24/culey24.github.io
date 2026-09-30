@@ -47,6 +47,8 @@ export interface EducationItem {
   duration: string;
   details?: string;
   gpa?: string;
+  logo?: string;
+  logoDark?: string;
 }
 
 export interface LanguageItem {
@@ -71,6 +73,7 @@ export interface AwardItem {
   date: string;
   issuer?: string;
   details?: string;
+  proof?: string;
 }
 
 export interface CVContent {
@@ -165,7 +168,9 @@ export const defaultCVData: CVContent = {
       degree: "Bachelor of Science in Computer Science and Engineering",
       duration: "2024 - present",
       details: "GPA: 3.9",
-      gpa: "3.9"
+      gpa: "3.9",
+      logo: "/01_logobachkhoasang.png",
+      logoDark: "/01_logobachkhoatoi.png"
     }
   ],
   languages: [
@@ -189,7 +194,8 @@ export const defaultCVData: CVContent = {
       title: "First Prize | The 9th OISP Science and Technology Symposium (OSTS 2025)",
       date: "July 2025",
       issuer: "Ho Chi Minh City University of Technology (HCMUT)",
-      details: "Awarded for the good performance of the paper: 'Towards Cost-Effective Voice Cloning System for Vietnamese TTS: A Case Study at HCMUT'"
+      details: "Awarded for the good performance of the paper: 'Towards Cost-Effective Voice Cloning System for Vietnamese TTS: A Case Study at HCMUT'",
+      proof: "https://doi.org/10.1007/978-981-95-4963-4_18"
     },
     {
       id: "award-1",

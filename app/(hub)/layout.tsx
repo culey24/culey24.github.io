@@ -3,7 +3,7 @@
 import type { ComponentType } from 'react';
 import { defaultCVData } from '../../src/cvData';
 import { Header } from '../../src/components/Header';
-import { GithubIcon, LinkedinIcon, FacebookIcon, GlobeIcon, FileIcon, type IconProps } from '../../src/components/icons';
+import { GithubIcon, LinkedinIcon, GlobeIcon, FileIcon, type IconProps } from '../../src/components/icons';
 
 interface SocialLink {
   label: string;
@@ -21,11 +21,6 @@ export default function HubLayout({ children }: { children: React.ReactNode }) {
         label: 'LinkedIn',
         href: personalInfo.linkedin,
         Icon: LinkedinIcon,
-      },
-      personalInfo.facebook && {
-        label: 'Facebook',
-        href: personalInfo.facebook,
-        Icon: FacebookIcon,
       },
       personalInfo.website && {
         label: personalInfo.website.replace(/^https?:\/\//, ''),

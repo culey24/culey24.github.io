@@ -405,17 +405,10 @@ html {
   min-width: 0;
 }
 
-.hero-badge {
-  display: inline-block;
-  font-size: var(--text-xs);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-ink-2);
-  border: 1px solid var(--color-rule);
-  border-radius: 999px;
-  padding: 4px 12px;
-  margin-bottom: var(--space-sm);
+.hero-intro {
+  font-size: var(--text-md);
+  color: var(--color-ink-3);
+  margin-bottom: var(--space-2xs);
 }
 
 .hero-name {
@@ -736,8 +729,8 @@ html {
 }
 
 .exp-logo {
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   flex-shrink: 0;
   margin-top: 2px;
@@ -811,6 +804,17 @@ html {
 }
 
 /* Education */
+.edu-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.edu-main {
+  flex: 1;
+  min-width: 0;
+}
+
 .edu-degree {
   font-size: var(--text-md);
 }
@@ -846,34 +850,50 @@ html {
   margin-right: var(--space-2xs);
 }
 
-.pub-cite {
-  font-size: var(--text-sm);
-  line-height: 1.5;
-}
-
-.pub-authors {
-  color: var(--color-ink);
+.pub-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2xs);
 }
 
 .pub-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
   color: var(--color-link);
-  font-weight: 500;
   text-decoration: none;
+  line-height: 1.35;
 }
 
 .pub-title:hover {
   text-decoration: underline;
 }
 
+.pub-authors {
+  font-size: var(--text-sm);
+  color: var(--color-ink-2);
+  margin-top: var(--space-2xs);
+}
+
+.pub-author-me {
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
 .pub-meta {
+  font-size: var(--text-sm);
   color: var(--color-ink-3);
 }
 
 .pub-desc {
   font-size: var(--text-sm);
   color: var(--color-ink-2);
-  margin-top: var(--space-2xs);
-  max-width: 70ch;
+  margin-top: var(--space-xs);
+  max-width: none;
+}
+
+.pub-visit {
+  align-self: flex-start;
+  margin-top: var(--space-xs);
 }
 
 /* Projects */
@@ -913,6 +933,13 @@ html {
 }
 
 /* Achievements */
+.award-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2xs);
+}
+
 .award-title {
   font-size: var(--text-md);
 }
@@ -927,6 +954,10 @@ html {
   font-size: var(--text-sm);
   color: var(--color-ink-2);
   margin-top: var(--space-2xs);
+}
+
+.award-proof {
+  margin-top: auto;
 }
 
 /* Contact */

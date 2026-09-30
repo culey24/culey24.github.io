@@ -41,8 +41,6 @@ export function HarvardCV({ data }: HarvardCVProps) {
           <div className="harvard-contact">
             <span>{personalInfo.location}</span>
             <span>•</span>
-            <span>{personalInfo.phone}</span>
-            <span>•</span>
             <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a>
           </div>
           <div className="harvard-links">
@@ -51,12 +49,6 @@ export function HarvardCV({ data }: HarvardCVProps) {
             <a href={personalInfo.github} target="_blank" rel="noopener noreferrer">GitHub</a>
             <span>•</span>
             <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            {personalInfo.facebook && (
-              <>
-                <span>•</span>
-                <a href={personalInfo.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
-              </>
-            )}
           </div>
         </header>
 

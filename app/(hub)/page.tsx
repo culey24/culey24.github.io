@@ -9,10 +9,7 @@ import { Projects } from '../../src/components/Projects';
 import {
   GithubIcon,
   LinkedinIcon,
-  FacebookIcon,
   MailIcon,
-  PhoneIcon,
-  ZaloIcon,
   GlobeIcon,
   MapPinIcon,
   type IconProps,
@@ -48,18 +45,12 @@ export default function HomePage() {
         href: personalInfo.linkedin,
         Icon: LinkedinIcon,
       },
-      personalInfo.facebook && {
-        label: 'Facebook',
-        href: personalInfo.facebook,
-        Icon: FacebookIcon,
-      },
       { label: 'Email', href: `mailto:${personalInfo.email}`, Icon: MailIcon },
     ] as Array<SocialLink | false>
   ).filter((s): s is SocialLink => Boolean(s));
 
   const allSkills = skills.flatMap((cat) => cat.items);
 
-  const telHref = `tel:${personalInfo.phone.replace(/[^+\d]/g, '')}`;
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
     personalInfo.location,
   )}`;
@@ -67,14 +58,6 @@ export default function HomePage() {
   const contactRows = (
     [
       { label: 'Email', value: personalInfo.email, href: `mailto:${personalInfo.email}`, Icon: MailIcon },
-      { label: 'Phone', value: personalInfo.phone, href: telHref, Icon: PhoneIcon },
-      personalInfo.zalo && {
-        label: 'Zalo',
-        value: personalInfo.zalo.replace(/^https?:\/\//, ''),
-        href: personalInfo.zalo,
-        external: true,
-        Icon: ZaloIcon,
-      },
       {
         label: 'GitHub',
         value: personalInfo.github.replace(/^https?:\/\//, ''),
@@ -88,13 +71,6 @@ export default function HomePage() {
         href: personalInfo.linkedin,
         external: true,
         Icon: LinkedinIcon,
-      },
-      personalInfo.facebook && {
-        label: 'Facebook',
-        value: personalInfo.facebook.replace(/^https?:\/\//, ''),
-        href: personalInfo.facebook,
-        external: true,
-        Icon: FacebookIcon,
       },
       {
         label: 'Website',
@@ -119,7 +95,7 @@ export default function HomePage() {
       <section className="section hero">
         <div className="hero-grid">
           <div className="hero-copy">
-            <span className="hero-badge">{personalInfo.title}</span>
+            <p className="hero-intro">Hello, I&apos;m</p>
             <h1 className="hero-name">{personalInfo.name}</h1>
             <p className="hero-desc">{summary}</p>
             <div className="hero-actions">
@@ -239,11 +215,36 @@ export default function HomePage() {
         <div className="card-grid ed-grid">
           {education.map((edu) => (
             <article key={edu.id} className="card edu-card">
-              <p className="card-date">{edu.duration}</p>
-              <h3 className="edu-degree">{edu.degree}</h3>
-              <p className="edu-school">{edu.school}</p>
-              {edu.gpa && <p className="edu-gpa">GPA: {edu.gpa}</p>}
-              {edu.details && !edu.gpa && <p className="edu-gpa">{edu.details}</p>}
+              {edu.logo && (
+                <>
+                  {/* eslint-disable-next-line @next/next/no-img-element -- light-theme logo */}
+                  <img
+                    src={edu.logo}
+                    className="exp-logo exp-logo-light"
+                    alt={`${edu.school} logo`}
+                    loading="lazy"
+                  />
+                  {edu.logoDark && (
+                    // eslint-disable-next-line @next/next/no-img-element -- dark-theme logo
+                    <img
+                      src={edu.logoDark}
+                      className="exp-logo exp-logo-dark"
+                      alt=""
+                      loading="lazy"
+                    />
+                  )}
+                </>
+              )}
+              <div className="edu-main">
+                <p className="card-date">{edu.duration}</p>
+                <h3 className="edu-degree">{edu.degree}</h3>
+                <p className="edu-school">{edu.school}</p>
+                {edu.gpa ? (
+                  <p className="edu-gpa">GPA: {edu.gpa}</p>
+                ) : (
+                  edu.details && <p className="edu-gpa">{edu.details}</p>
+                )}
+              </div>
             </article>
           ))}
         </div>
@@ -271,6 +272,16 @@ export default function HomePage() {
               <h3 className="award-title">{award.title}</h3>
               {award.issuer && <p className="award-issuer">{award.issuer}</p>}
               {award.details && <p className="award-desc">{award.details}</p>}
+              {award.proof && (
+                <a
+                  className="btn btn-outline award-proof"
+                  href={award.proof}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Proof
+                </a>
+              )}
             </article>
           ))}
         </div>
