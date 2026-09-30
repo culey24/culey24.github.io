@@ -9,6 +9,7 @@ export interface PersonalInfo {
   linkedin: string;
   website: string;
   facebook?: string;
+  zalo?: string;
 }
 
 export interface ExperienceItem {
@@ -18,6 +19,8 @@ export interface ExperienceItem {
   duration: string;
   description: string;
   bullets: string[];
+  logo?: string;
+  logoDark?: string;
 }
 
 export interface ProjectItem {
@@ -43,6 +46,7 @@ export interface EducationItem {
   degree: string;
   duration: string;
   details?: string;
+  gpa?: string;
 }
 
 export interface LanguageItem {
@@ -69,27 +73,10 @@ export interface AwardItem {
   details?: string;
 }
 
-export interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  tags: string[];
-  link?: string;
-}
-
-export interface WorkspaceSpecs {
-  computer: string;
-  os: string;
-  editor: string;
-  terminal: string;
-  gear: string[];
-}
-
 export interface CVContent {
   personalInfo: PersonalInfo;
   summary: string;
+  researchInterests: string[];
   experience: ExperienceItem[];
   projects: ProjectItem[];
   skills: SkillCategory[];
@@ -103,16 +90,23 @@ export const defaultCVData: CVContent = {
   personalInfo: {
     name: "Quach Gia Bao",
     title: "CS Student",
-    photo: "/avatar.png",
+    photo: "/myself.jpg",
     email: "bao.quach24hcmut@hcmut.edu.vn",
     phone: "+84 912 732 526",
     location: "Ho Chi Minh City, Vietnam",
     github: "https://github.com/culey24",
-    linkedin: "https://www.linkedin.com/in/qu%C3%A1ch-gia-b%E1%BA%A3o-243607340/",
+    linkedin: "https://www.linkedin.com/in/gia-b%E1%BA%A3o-qu%C3%A1ch-243607340",
     website: "https://culey24.github.io",
-    facebook: "https://www.facebook.com/zabao.quach/"
+    facebook: "https://www.facebook.com/zabao.quach/",
+    zalo: "https://zalo.me/84912732526"
   },
   summary: "A Computer Science & Engineering sophomore at HCMUT with a deep passion for Software Engineering and Artificial Intelligence. My expertise spans ML/DL foundations, NLP, and Generative AI systems. I am highly motivated to bridge the gap between core machine learning research and high-performance software applications to solve complex, real-world problems.",
+  researchInterests: [
+    "Machine Learning",
+    "Deep Learning",
+    "Natural Language Processing",
+    "Generative AI"
+  ],
   experience: [
     {
       id: "school",
@@ -120,8 +114,9 @@ export const defaultCVData: CVContent = {
       role: "Computer Science",
       duration: "2024 - present",
       description: "Collaborated as a research member in Unlimited AI research lab (URA) from 2024 to present.",
-      bullets: [
-      ]
+      bullets: [],
+      logo: "/01_logobachkhoasang.png",
+      logoDark: "/01_logobachkhoatoi.png"
     }
   ],
   projects: [
@@ -169,7 +164,8 @@ export const defaultCVData: CVContent = {
       school: "Ho Chi Minh City University of Technology",
       degree: "Bachelor of Science in Computer Science and Engineering",
       duration: "2024 - present",
-      details: "GPA: 3.9"
+      details: "GPA: 3.9",
+      gpa: "3.9"
     }
   ],
   languages: [

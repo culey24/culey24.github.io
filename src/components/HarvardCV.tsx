@@ -23,6 +23,7 @@ export function HarvardCV({ data }: HarvardCVProps) {
           </svg>
           Print / Save PDF
         </button>
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- static export, plain anchor avoids client-side RSC prefetch */}
         <a href="/" className="harvard-back-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="19" y1="12" x2="5" y2="12" />
@@ -100,7 +101,7 @@ export function HarvardCV({ data }: HarvardCVProps) {
               <div key={pub.id} className="harvard-item harvard-publication-item">
                 <p className="harvard-pub-citation">
                   <span className="harvard-pub-authors">{pub.authors}</span>. 
-                  <span className="harvard-pub-title"> "{pub.title}."</span> 
+                  <span className="harvard-pub-title"> &quot;{pub.title}.&quot;</span> 
                   <span className="harvard-pub-publisher"> {pub.publisher}</span>, 
                   <span className="harvard-pub-date"> {pub.date}</span>.
                   {pub.link && (

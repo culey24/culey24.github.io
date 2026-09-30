@@ -1,0 +1,12 @@
+[
+  {
+    "date": "2026-09-30",
+    "macrostructure": "Single-page sections (hugo-profile structure)",
+    "theme": "hugo-profile palette (#007bff accent on #eaedf0 paper, dark #18191a)",
+    "enrichment": "none",
+    "nav": "N1b sticky navbar: section anchors + blog + search + theme",
+    "footer": "Ft2 inline + socials",
+    "scope": "app",
+    "brief": "blog markdown pipeline upgraded (reference machinelearningcoban.com): KaTeX math (react-markdown + remark-math + rehype-katex), auto Table of Contents + heading anchors, series/order grouping + prev/next in post, cover image + read-more cards, /tags page"
+  }
+]
