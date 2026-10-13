@@ -42,6 +42,12 @@ export function HarvardCV({ data }: HarvardCVProps) {
             <span>{personalInfo.location}</span>
             <span>•</span>
             <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a>
+            {personalInfo.emailAlt && (
+              <>
+                <span>•</span>
+                <a href={`mailto:${personalInfo.emailAlt}`}>{personalInfo.emailAlt}</a>
+              </>
+            )}
           </div>
           <div className="harvard-links">
             <a href={personalInfo.website} target="_blank" rel="noopener noreferrer">Website</a>

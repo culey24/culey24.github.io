@@ -3,6 +3,7 @@ export interface PersonalInfo {
   title: string;
   photo?: string;
   email: string;
+  emailAlt?: string;
   phone: string;
   location: string;
   github: string;
@@ -94,12 +95,13 @@ export const defaultCVData: CVContent = {
     name: "Quach Gia Bao",
     title: "CS Student",
     photo: "/myself.jpg",
-    email: "bao.quach24hcmut@hcmut.edu.vn",
+    email: "contact@quachgiabao.com",
+    emailAlt: "bao.quach24hcmut@hcmut.edu.vn",
     phone: "+84 912 732 526",
     location: "Ho Chi Minh City, Vietnam",
     github: "https://github.com/culey24",
     linkedin: "https://www.linkedin.com/in/gia-b%E1%BA%A3o-qu%C3%A1ch-243607340",
-    website: "https://culey24.github.io",
+    website: "https://quachgiabao.com",
     facebook: "https://www.facebook.com/zabao.quach/",
     zalo: "https://zalo.me/84912732526"
   },

@@ -55,9 +55,18 @@ export default function HomePage() {
     personalInfo.location,
   )}`;
 
+  const emailRows: ContactRow[] = [personalInfo.email, personalInfo.emailAlt]
+    .filter((value): value is string => Boolean(value))
+    .map((address, index) => ({
+      label: index === 0 ? 'Email' : 'Email (HCMUT)',
+      value: address,
+      href: `mailto:${address}`,
+      Icon: MailIcon,
+    }));
+
   const contactRows = (
     [
-      { label: 'Email', value: personalInfo.email, href: `mailto:${personalInfo.email}`, Icon: MailIcon },
+      ...emailRows,
       {
         label: 'GitHub',
         value: personalInfo.github.replace(/^https?:\/\//, ''),

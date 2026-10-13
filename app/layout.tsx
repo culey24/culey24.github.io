@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://quachgiabao.com'),
   title: "Quach Gia Bao's Homepage",
   description: 'Quach Gia Bao — CS Student',
   icons: { icon: '/favicon.svg?v=2' },

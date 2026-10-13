@@ -1,4 +1,4 @@
-# Interactive CV Website (`culey24.github.io`)
+# Interactive CV Website (`quachgiabao.com`)
 
 This repository contains a professional, interactive, and bilingual CV website designed for deployment to GitHub Pages. It features a modern, clean, responsive design with full dark-mode support and optimized print styling for exporting to PDF.
 
