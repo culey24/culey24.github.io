@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { useTheme } from '../useTheme';
 import { defaultCVData } from '../cvData';
 import { Search } from './Search';
@@ -16,6 +17,16 @@ const sections = [
 
 export function Header() {
   const { isDark, setIsDark } = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [menuOpen]);
 
   return (
     <header className="navbar no-print">
@@ -25,20 +36,30 @@ export function Header() {
           {defaultCVData.personalInfo.name}
         </a>
 
-        <nav className="navbar-links" aria-label="Primary">
+        <nav
+          id="primary-navigation"
+          className={`navbar-links${menuOpen ? ' is-open' : ''}`}
+          aria-label="Primary"
+        >
           {sections.map((s) => (
-            <a key={s.id} href={`/#${s.id}`} className="navbar-link">
+            <a
+              key={s.id}
+              href={`/#${s.id}`}
+              className="navbar-link"
+              onClick={() => setMenuOpen(false)}
+            >
               {s.label}
             </a>
           ))}
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- static export; plain anchor avoids client-side RSC prefetch */}
-          <a href="/blogs" className="navbar-link">
+          <a href="/blogs" className="navbar-link" onClick={() => setMenuOpen(false)}>
             Blog
           </a>
         </nav>
 
+        <Search />
+
         <div className="navbar-controls">
-          <Search />
           <button
             type="button"
             className="theme-toggle"
@@ -47,6 +68,18 @@ export function Header() {
             suppressHydrationWarning
           >
             {isDark ? 'Light' : 'Dark'}
+          </button>
+          <button
+            type="button"
+            className="navbar-toggle"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-expanded={menuOpen}
+            aria-controls="primary-navigation"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          >
+            <span className="navbar-toggle-bar" />
+            <span className="navbar-toggle-bar" />
+            <span className="navbar-toggle-bar" />
           </button>
         </div>
       </div>
