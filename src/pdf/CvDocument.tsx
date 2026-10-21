@@ -16,39 +16,54 @@ Font.register({
   ],
 });
 
+Font.register({
+  family: 'SourceSerif',
+  fonts: [
+    { src: '/fonts/SourceSerif4-Regular.ttf', fontWeight: 400 },
+    { src: '/fonts/SourceSerif4-Bold.ttf', fontWeight: 700 },
+  ],
+});
+
+const myName = 'Bao G. Quach';
+
 const styles = StyleSheet.create({
   page: {
     paddingVertical: 30,
     paddingHorizontal: 38,
-    fontSize: 8.6,
+    fontSize: 9.2,
     fontFamily: 'Inter',
     color: '#111827',
     lineHeight: 1.35,
   },
   name: {
-    fontSize: 17,
+    fontFamily: 'SourceSerif',
+    fontSize: 19,
     fontWeight: 700,
-    letterSpacing: 0.6,
+    letterSpacing: 0.8,
+    lineHeight: 1.25,
     textAlign: 'center',
     color: '#111827',
   },
   contactLine: {
-    fontSize: 8.6,
+    fontSize: 9.2,
     color: '#4b5563',
     textAlign: 'center',
-    marginTop: 3,
+    lineHeight: 1.35,
+    marginTop: 4,
   },
   link: {
     color: '#1a56db',
     textDecoration: 'none',
   },
   section: {
-    marginTop: 9,
+    marginTop: 10,
   },
   sectionTitle: {
-    fontSize: 9.6,
+    fontFamily: 'SourceSerif',
+    fontSize: 10.8,
     fontWeight: 700,
-    letterSpacing: 0.7,
+    letterSpacing: 0.8,
+    lineHeight: 1.2,
     color: '#111827',
   },
   divider: {
@@ -58,7 +73,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   item: {
-    marginBottom: 5,
+    marginBottom: 6,
   },
   row: {
     flexDirection: 'row',
@@ -73,11 +88,15 @@ const styles = StyleSheet.create({
     color: '#4b5563',
   },
   muted: {
-    fontSize: 8.6,
+    fontSize: 9.2,
     color: '#4b5563',
   },
+  pubTitle: {
+    fontWeight: 700,
+    color: '#111827',
+  },
   right: {
-    fontSize: 8.6,
+    fontSize: 9.2,
     color: '#4b5563',
     textAlign: 'right',
   },
@@ -87,13 +106,13 @@ const styles = StyleSheet.create({
   },
   bulletDot: {
     width: 9,
-    fontSize: 8.6,
+    fontSize: 9.2,
     color: '#4b5563',
   },
   bulletText: {
     flexGrow: 1,
     flexBasis: 0,
-    fontSize: 8.6,
+    fontSize: 9.2,
     color: '#4b5563',
   },
 });
@@ -168,23 +187,35 @@ export function CvDocument({ data }: CvDocumentProps) {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>RESEARCH &amp; PUBLICATIONS</Text>
             <View style={styles.divider} />
-            {publications.map((pub) => (
-              <View key={pub.id} style={styles.item}>
-                <Text style={styles.muted}>
-                  {pub.authors}. &quot;{pub.title}.&quot; {pub.publisher}, {pub.date}.
-                  {pub.link ? (
-                    <>
-                      {' '}
-                      [<Link src={pub.link} style={styles.link}>
-                        DOI
-                      </Link>
-                      ]
-                    </>
-                  ) : null}
-                </Text>
-                {pub.description && <Text style={styles.muted}>{pub.description}</Text>}
-              </View>
-            ))}
+            {publications.map((pub) => {
+              const authors = pub.authors.split(',').map((author) => author.trim());
+              return (
+                <View key={pub.id} style={styles.item}>
+                  <Text style={styles.pubTitle}>{pub.title}</Text>
+                  <Text style={styles.muted}>
+                    {authors.map((author, i) => (
+                      <Text key={`${author}-${i}`} style={author.includes(myName) ? styles.bold : undefined}>
+                        {author}
+                        {i < authors.length - 1 ? ', ' : '.'}
+                      </Text>
+                    ))}
+                  </Text>
+                  <Text style={styles.muted}>
+                    {pub.publisher}, {pub.date}.
+                    {pub.link ? (
+                      <>
+                        {' '}
+                        [<Link src={pub.link} style={styles.link}>
+                          DOI
+                        </Link>
+                        ]
+                      </>
+                    ) : null}
+                  </Text>
+                  {pub.description && <Text style={styles.muted}>{pub.description}</Text>}
+                </View>
+              );
+            })}
           </View>
         )}
 

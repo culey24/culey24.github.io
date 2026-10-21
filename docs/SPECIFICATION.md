@@ -132,6 +132,14 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 
 ## 10. NHẬT KÝ THAY ĐỔI (CHANGELOG)
 
+### [v0.13.2] - 2026-10-21
+* **CV — typography & sửa lỗi trình bày:**
+  * Thêm **Source Serif 4** cho tên + tiêu đề mục (Inter giữ cho nội dung) — nhúng vào PDF.
+  * **Sửa lỗi chồng chữ**: dòng contact đè lên `QUACH GIA BAO` do dòng tên thiếu `lineHeight` → đặt `lineHeight`/margin tường minh (verify bằng `pdftotext -bbox`: tên kết thúc y≈56.0, contact bắt đầu y≈57.8).
+  * **Publication tách thành các hàng**: tên bài báo → tác giả (**in đậm tên mình**) → `Springer, Singapore, Nov 22, 2025. [DOI]` → summary.
+  * Tăng cỡ chữ/khoảng cách để lấp trang cân đối — vẫn **1 trang A4** (~792/812pt).
+* Kèm: link Demo BKHome Chatbot → `https://cse.hcmut.edu.vn/en/chatbot`.
+
 ### [v0.13.1] - 2026-10-21
 * **CV — nhúng font:** `CvDocument` dùng **Inter** (Regular/Bold/Italic) và **nhúng thẳng vào PDF** (file `.ttf` ở `public/fonts/`) thay cho base-14 Helvetica **không nhúng** — khắc phục lỗi font hiển thị tuỳ viewer. PDF vẫn **1 trang A4**, text vẫn trích xuất/copy được ([SPECIFICATION §7](SPECIFICATION.md)).
 * **Project link:** BKHome Chatbot → **`https://cse.hcmut.edu.vn/en/chatbot`** ([§4](SPECIFICATION.md)).
