@@ -239,15 +239,29 @@ export default function HomePage() {
               </div>
               {award.issuer && <p className="award-issuer">{award.issuer}</p>}
               {award.details && <p className="award-desc">{award.details}</p>}
-              {award.proof && (
-                <a
-                  className="btn btn-outline award-proof"
-                  href={award.proof}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Certificate
-                </a>
+              {(award.certificate || award.proof) && (
+                <div className="award-actions">
+                  {award.certificate && (
+                    <a
+                      className="btn btn-outline"
+                      href={award.certificate}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Certificate
+                    </a>
+                  )}
+                  {award.proof && (
+                    <a
+                      className="detail-link"
+                      href={award.proof}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Paper <span aria-hidden="true">→</span>
+                    </a>
+                  )}
+                </div>
               )}
             </li>
           ))}

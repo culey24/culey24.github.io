@@ -69,6 +69,7 @@ Ghi chú schema:
 - `publications` và `awards` là collection optional (consumer dùng `?? []`).
 - `PersonalInfo.title`, `.phone`, `.facebook`, `.zalo` **đã khai báo nhưng chưa render**.
 - Đã bổ sung trường **`slug`** trên `ProjectItem`/`PublicationItem` (v0.8.0) cho trang chi tiết.
+- `AwardItem.certificate` (v0.9.1): đường dẫn PDF trong `public/certificates/` — nút **Certificate** dùng trường này; `proof` giữ vai trò DOI (link "Paper").
 
 ### 4.2 Blog frontmatter — `content/blog/*.md`
 `title`, `date` (YYYY-MM-DD), `tags[]`, `excerpt?`, `series?`, `order?`, `cover?`, `link?` (link ngoài).
@@ -127,6 +128,9 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 ---
 
 ## 10. NHẬT KÝ THAY ĐỔI (CHANGELOG)
+
+### [v0.9.1] - 2026-10-19
+* **Certificate có đích:** thêm trường `AwardItem.certificate`; copy chứng nhận vào `public/certificates/` (`osts-2025-first-prize.pdf`, `miwai-2025.pdf`); nút **Certificate** của giải *First Prize OSTS 2025* giờ mở **PDF**, DOI chuyển thành link **"Paper"** ([FRONTEND_SPEC §4](FRONTEND_SPEC.md)). *(File `miwai-2025.pdf` chưa gắn vào mục nào — chờ chốt.)*
 
 ### [v0.9.0] - 2026-10-19
 * **DESIGN SYSTEM (mới):** thêm [docs/DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) — token màu/typography/spacing/motion + **contract trạng thái tương tác** cho 2 loại (text link, button) và card/chip/nav; quy tắc phân vai, divider section, accessibility.

@@ -1212,7 +1212,11 @@ a.tag:hover {
   margin-top: var(--space-2xs);
 }
 
-.award-proof {
+.award-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
   margin-top: var(--space-sm);
 }
 

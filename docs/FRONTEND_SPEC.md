@@ -114,7 +114,7 @@ Social icons (GitHub, LinkedIn, Website, link `/cv`) + `© {năm} {tên}` + "Bui
 | 4 | Education | `education` | render inline (logo light/dark) |
 | 5 | Publications | `publications` | [`Publications.tsx`](../src/components/Publications.tsx) — "View detail" mỗi item (v0.8.0) |
 | 6 | Featured Projects | `projects` | [`Projects.tsx`](../src/components/Projects.tsx) — tên đổi từ "Projects" (v0.8.0) |
-| 7 | Achievements | `achievements` | render inline — nút **"Certificate"** (v0.8.0) |
+| 7 | Achievements | `achievements` | render inline — nút **"Certificate"** (→ PDF trong `public/certificates/`) + link **"Paper"** (DOI) (v0.9.1) |
 | 8 | Featured Blogs | `blogs` | [`BlogCard.tsx`](../src/components/BlogCard.tsx) — 3 bài mới nhất (v0.8.0) |
 | 9 | Get in Touch (CTA) | `contact` | CTA ngắn → `/contact` (v0.5.0) |
 

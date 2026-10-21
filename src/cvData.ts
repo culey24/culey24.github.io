@@ -77,6 +77,7 @@ export interface AwardItem {
   issuer?: string;
   details?: string;
   proof?: string;
+  certificate?: string;
 }
 
 export interface CVContent {
@@ -201,7 +202,8 @@ export const defaultCVData: CVContent = {
       date: "July 2025",
       issuer: "Ho Chi Minh City University of Technology (HCMUT)",
       details: "Awarded for the good performance of the paper: 'Towards Cost-Effective Voice Cloning System for Vietnamese TTS: A Case Study at HCMUT'",
-      proof: "https://doi.org/10.1007/978-981-95-4963-4_18"
+      proof: "https://doi.org/10.1007/978-981-95-4963-4_18",
+      certificate: "/certificates/osts-2025-first-prize.pdf"
     },
     {
       id: "award-1",
