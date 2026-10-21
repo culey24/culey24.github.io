@@ -277,11 +277,6 @@ export function CvDocument({ data }: CvDocumentProps) {
                     <Text style={styles.bulletText}>{bullet}</Text>
                   </View>
                 ))}
-                {proj.technologies?.length > 0 && (
-                  <Text style={styles.muted}>
-                    <Text style={styles.bold}>Technologies:</Text> {proj.technologies.join(', ')}
-                  </Text>
-                )}
               </View>
             ))}
           </View>

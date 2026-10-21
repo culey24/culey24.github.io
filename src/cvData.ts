@@ -163,9 +163,9 @@ export const defaultCVData: CVContent = {
         "In active development — expanding domain coverage and agent tools.",
       ].join("\n"),
       bullets: [
-        "Architected and deployed a full-stack microservices platform — Fastify gateway, FastAPI RAG service, React frontend — with an agentic chatbot at its core.",
-        "Built a two-stage retrieval engine: FAQ semantic matching that skips the LLM above 0.90 similarity, plus hierarchical parent-child RAG with cross-encoder reranking.",
-        "Cut retrieval latency and raised context precision across campus domains via semantic caching, metadata filters and Vietnamese query rewriting.",
+        "Architected and deployed a full-stack microservices platform — Fastify API gateway, FastAPI RAG service and React frontend — with Postgres/pgvector and Neo4j storage.",
+        "Built an agentic chatbot that plans and calls tools (document search, web search) for multi-step questions, backed by guardrails that refuse out-of-scope requests.",
+        "Improved retrieval quality and repeat latency with a two-stage engine — FAQ semantic match above 0.90 skips the LLM, while hierarchical parent-child RAG adds cross-encoder reranking — plus a semantic cache.",
       ],
       role: "Lead Developer",
       technologies: ["Python", "FastAPI", "Node.js / Fastify", "React", "PostgreSQL + pgvector", "Neo4j", "Docker"],
@@ -181,18 +181,13 @@ export const defaultCVData: CVContent = {
     },
     {
       id: "skill-frame",
-      name: "Frameworks & Libraries",
-      items: ["Pydantic", "LangChain", "React", "Next.js", "Node.js / Express", "Tailwind CSS"]
-    },
-    {
-      id: "skill-mldl",
-      name: "ML/DL",
-      items: ["PyTorch", "TensorFlow", "Scikit-Learn", "NLP", "Generative AI"]
+      name: "Frameworks",
+      items: ["Pydantic", "React", "Node.js", "Scikit-Learn", "PyTorch"]
     },
     {
       id: "skill-tools",
       name: "Tools",
-      items: ["Git & GitHub Actions", "Docker", "PostgreSQL", "Linux", "LaTeX", "UML"]
+      items: ["Git & GitHub Actions", "Docker", "PostgreSQL", "Linux"]
     }
   ],
   education: [

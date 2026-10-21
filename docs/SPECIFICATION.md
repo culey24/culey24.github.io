@@ -132,6 +132,12 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 
 ## 10. NHẬT KÝ THAY ĐỔI (CHANGELOG)
 
+### [v0.13.4] - 2026-10-21
+* **CV — SKILLS rút gọn:** bỏ nhóm **ML/DL**; **Frameworks** còn `Pydantic, React, Node.js, Scikit-Learn, PyTorch`; **Tools** bỏ `LaTeX`, `UML`. Còn 4 nhóm: Programming Languages · Frameworks · Tools · Languages.
+* **CV — bullet BKHome tách 3 hướng:** (1) nền tảng web full-stack microservices, (2) **agentic chatbot** (planning + tool calling + guardrails), (3) **chất lượng/latency retrieval** (FAQ fast path ≥ 0.90, parent–child RAG, cross-encoder rerank, semantic cache).
+* **CV — bỏ dòng `Technologies:`** ở entry project (trùng với SKILLS và đã nêu trong bullets); vẫn giữ trên trang web.
+* Verify: CV **1 trang**, vẫn đủ 4 nhóm kỹ năng.
+
 ### [v0.13.3] - 2026-10-21
 * **Viết lại nội dung project BKHome Chatbot** (bám repo thật): **agentic chatbot** là trung tâm, nền tảng **microservices** (Fastify gateway, FastAPI RAG service, React frontend), **retrieval 2 giai đoạn** (FAQ semantic ≥ 0.90 bỏ qua LLM → parent–child document RAG phân cấp), **cross-encoder reranking** (Cohere rerank-v3.5), **metadata filter** (domain/major/doc_type), **semantic cache**, **query rewrite** viết tắt tiếng Việt (HP, ĐKMH, HK232), **Neo4j** cho heading tree + glossary graph. Cập nhật tech chips: Python, FastAPI, Node.js/Fastify, React, PostgreSQL + pgvector, Neo4j, Docker.
 * **CV giữ 1 trang** sau khi thêm nội dung (siết nhẹ spacing; verify: 1 page, lấp ~807/814pt).
