@@ -132,6 +132,10 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 
 ## 10. NHẬT KÝ THAY ĐỔI (CHANGELOG)
 
+### [v0.13.5] - 2026-10-21
+* **CV — bullet BKHome viết lại theo ý người dùng** (đã polish ngữ pháp): (1) core features của AI chatbot với **multi-domain university regulation documents**, trên **agent harness** + **hierarchical RAG**; (2) nền tảng **full-stack microservices** (React frontend + multi-service backend); (3) **deployed and ready to serve HCMUT CSE students**.
+* Nới lại spacing CV cho cân đối sau khi bullet ngắn lại (1 trang, lấp ~795/814pt).
+
 ### [v0.13.4] - 2026-10-21
 * **CV — SKILLS rút gọn:** bỏ nhóm **ML/DL**; **Frameworks** còn `Pydantic, React, Node.js, Scikit-Learn, PyTorch`; **Tools** bỏ `LaTeX`, `UML`. Còn 4 nhóm: Programming Languages · Frameworks · Tools · Languages.
 * **CV — bullet BKHome tách 3 hướng:** (1) nền tảng web full-stack microservices, (2) **agentic chatbot** (planning + tool calling + guardrails), (3) **chất lượng/latency retrieval** (FAQ fast path ≥ 0.90, parent–child RAG, cross-encoder rerank, semantic cache).

@@ -163,9 +163,9 @@ export const defaultCVData: CVContent = {
         "In active development — expanding domain coverage and agent tools.",
       ].join("\n"),
       bullets: [
-        "Architected and deployed a full-stack microservices platform — Fastify API gateway, FastAPI RAG service and React frontend — with Postgres/pgvector and Neo4j storage.",
-        "Built an agentic chatbot that plans and calls tools (document search, web search) for multi-step questions, backed by guardrails that refuse out-of-scope requests.",
-        "Improved retrieval quality and repeat latency with a two-stage engine — FAQ semantic match above 0.90 skips the LLM, while hierarchical parent-child RAG adds cross-encoder reranking — plus a semantic cache.",
+        "Developed the core features of an AI chatbot covering multi-domain university regulation documents, built on an agent harness and a hierarchical RAG system.",
+        "Built a full-stack microservices platform with a React frontend and a multi-service backend.",
+        "Deployed and ready to serve HCMUT CSE students.",
       ],
       role: "Lead Developer",
       technologies: ["Python", "FastAPI", "Node.js / Fastify", "React", "PostgreSQL + pgvector", "Neo4j", "Docker"],
