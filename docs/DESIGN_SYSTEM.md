@@ -27,6 +27,7 @@
 | `--color-info` | `= accent` | `= accent` | thông tin |
 | `--color-link` | `= accent` | `= accent` | alias màu link |
 | `--color-focus` | `= accent` | `= accent` | outline focus |
+| `--color-accent-light` | `rgba(0,123,255,.1)` | `rgba(110,168,254,.16)` | nền hover nhạt |
 | `--color-solid*` | ink/white | ink/paper | nút primary |
 
 > **v0.10.0 — mở rộng palette:** giữ xanh làm primary, thêm **secondary accent** + **semantic** (success/warning/danger/info). Accent ở dark đổi từ trắng `#ffffff` → xanh nhạt `#6ea8fe` để dark mode cũng có màu.
@@ -99,7 +100,7 @@
 - default `ink-2`; hover `ink`; transition `color`.
 
 ### F. Icon tròn — `.social-icon`
-- default: viền `rule`; hover: chữ `link`, viền `accent`, nền `accent-light`.
+- default: viền `rule`; hover: chữ `link`, viền `accent`, nền `color-accent-light`.
 
 ### G. Badge — `.badge` (+ `--info` / `--success` / `--warning`)
 - Pill nhỏ, chữ `--text-xs`, weight 600; màu lấy từ tone (`color-mix` 12–45% với semantic token).

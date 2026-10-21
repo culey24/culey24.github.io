@@ -124,10 +124,10 @@ export const defaultCVData: CVContent = {
   experience: [
     {
       id: "school",
-      company: "Ho Chi Minh University of Technology",
-      role: "Computer Science",
+      company: "Unlimited AI Research Lab (URA) — HCMUT",
+      role: "Student Researcher",
       duration: "2024 - present",
-      description: "Collaborated as a research member in Unlimited AI research lab (URA) from 2024 to present.",
+      description: "Research member working on NLP and generative AI, focusing on cost-effective voice cloning and retrieval systems.",
       bullets: [],
       logo: "/01_logobachkhoasang.png",
       logoDark: "/01_logobachkhoatoi.png"
@@ -144,25 +144,20 @@ export const defaultCVData: CVContent = {
       statusTone: "warning",
       summary: "An AI-powered campus assistant giving HCMUT students quick access to essential information, campus guidance, and academic support tools.",
       content: [
-        "An interactive chatbot that serves as a comprehensive resource for HCMUT, especially CSE students — quick access to essential information, campus guidance, and AI-powered academic support tools.",
+        "An interactive campus assistant for HCMUT students — quick access to essential information, campus guidance, and AI-powered academic support.",
         "",
         "## Highlights",
         "",
-        "- Optimized search performance with hierarchical indexing over documents.",
-        "- Integrated OpenRouter for NLP tasks, with responses validated through the Pydantic framework.",
-        "- Deployed using Google Cloud Run for the microservices backend and Vercel for the frontend.",
-        "",
-        "## Status",
-        "",
-        "Still in development — new features are being added.",
+        "- Architected the microservices backend on Google Cloud Run and the frontend on Vercel.",
+        "- Enhanced retrieval performance across academic documents via hierarchical indexing.",
+        "- Integrated OpenRouter LLM orchestration and enforced strict schema validation with Pydantic.",
       ].join("\n"),
       bullets: [
-        "Optimized searching performance by applying hierarchical indexing on documents.",
-        "Integrated OpenRouter for NLP tasks, validating using Pydantic framework",
-        "Deployed using Google Cloud Run for microservices backend and Vercel for frontend",
-        "Still in development..."
+        "Architected the microservices backend on Google Cloud Run and the frontend on Vercel.",
+        "Enhanced retrieval performance across academic documents via hierarchical indexing.",
+        "Integrated OpenRouter LLM orchestration and enforced strict schema validation with Pydantic.",
       ],
-      role: "Creator, Lead Developer",
+      role: "Lead Developer",
       technologies: ["Pydantic", "React", "TypeScript", "Node.js", "PostgreSQL"],
       link: "https://bkhome-chatbot.vercel.app/login",
       github: "https://github.com/culey24/bkhome-chatbot"
@@ -196,8 +191,8 @@ export const defaultCVData: CVContent = {
       school: "Ho Chi Minh City University of Technology",
       degree: "Bachelor of Science in Computer Science and Engineering",
       duration: "2024 - present",
-      details: "GPA: 3.9",
-      gpa: "3.9",
+      details: "Expected graduation: 2028",
+      gpa: "3.9 / 4.0",
       logo: "/01_logobachkhoasang.png",
       logoDark: "/01_logobachkhoatoi.png"
     }

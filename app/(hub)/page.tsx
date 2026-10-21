@@ -191,11 +191,8 @@ export default function HomePage() {
                     <span className="exp-duration">{edu.duration}</span>
                   </div>
                   <p className="edu-school">{edu.school}</p>
-                  {edu.gpa ? (
-                    <p className="edu-gpa">GPA: {edu.gpa}</p>
-                  ) : (
-                    edu.details && <p className="edu-gpa">{edu.details}</p>
-                  )}
+                  {edu.gpa && <p className="edu-gpa">GPA: {edu.gpa}</p>}
+                  {edu.details && <p className="edu-gpa">{edu.details}</p>}
                 </div>
               </div>
             </li>

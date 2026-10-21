@@ -179,7 +179,7 @@ Social icons (GitHub, LinkedIn, Website, link `/cv`) + `© {năm} {tên}` + "Bui
 
 ## 9. CV PAGE — `/cv`
 
-`app/cv/page.tsx` → [`HarvardCV.tsx`](../src/components/HarvardCV.tsx). Không dùng Header/Footer; có thanh hành động (Print/Save PDF + Back to Hub), ẩn khi in. Chi tiết in ấn xem [SPECIFICATION §7](SPECIFICATION.md).
+`app/cv/page.tsx` → dynamic import (`ssr: false`) [`CvPdfViewer`](../src/pdf/CvPdfViewer.tsx) → [`CvDocument`](../src/pdf/CvDocument.tsx) dựng bằng **`@react-pdf/renderer`** (khổ A4). Trang có nút **Download PDF** (`Quach-Gia-Bao-CV.pdf`) + "← Back to Hub"; không dùng Header/Footer. PDF sinh trong trình duyệt nên **không dính header/footer của trình duyệt** ([SPECIFICATION §7](SPECIFICATION.md)).
 
 ---
 
@@ -202,6 +202,6 @@ Social icons (GitHub, LinkedIn, Website, link `/cv`) + `© {năm} {tên}` + "Bui
 | `Experience` | Card kinh nghiệm (logo light/dark) |
 | `Projects` | Card dự án (tech tags, link GitHub/Demo) |
 | `Publications` | Danh sách publication (đánh số, in đậm tác giả) |
-| `HarvardCV` | Tài liệu CV in được |
+| `CvDocument` / `CvPdfViewer` | CV dạng PDF (`@react-pdf/renderer`) cho `/cv` |
 | `BlogCard` / `PostView` | Card blog / render bài + TOC + prev-next |
 | `icons` | Factory `makeIcon` + bộ icon SVG inline |

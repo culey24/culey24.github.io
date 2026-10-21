@@ -9,7 +9,7 @@ See [`docs/SPECIFICATION.md`](./docs/SPECIFICATION.md) for the full technical sp
 | Route | Description |
 | --- | --- |
 | `/` | One-page portfolio hub: hero, about, experience, education, publications, projects, achievements, contact |
-| `/cv` | Harvard-style CV, print-optimized for export to PDF |
+| `/cv` | CV rendered as a PDF with `@react-pdf/renderer` (view + download) |
 | `/blogs`, `/blogs/<slug>`, `/tags` | Markdown blog with KaTeX math, auto table of contents, series grouping, and tags |
 
 ## Features
@@ -17,7 +17,7 @@ See [`docs/SPECIFICATION.md`](./docs/SPECIFICATION.md) for the full technical sp
 - **Dark mode** — auto-detected from system settings with a manual toggle. A pre-paint inline script (`app/layout.tsx`) avoids the flash of wrong theme; the choice persists in `localStorage`.
 - **Static search** — client-side search over skills, research interests, projects, publications, experience, and awards. No backend.
 - **Markdown blog** — posts are `.md` files in `content/blog/`. Supports GFM, KaTeX math (`$...$` / `$$...$$`), auto heading anchors + TOC, cover images, per-post series/order grouping with prev/next navigation, and a tag cloud at `/tags`.
-- **Print / PDF export** — dedicated `@media print` styles for both the hub and the Harvard CV, plus a **Print / Save PDF** button on `/cv`.
+- **CV PDF** — `/cv` renders the CV with `@react-pdf/renderer` (A4) and offers a **Download PDF** button, so the exported file has no browser header/footer. The hub keeps `@media print` styles.
 
 ## Tech Stack
 
@@ -66,7 +66,7 @@ yarn lint
 ```
 app/                  Next.js App Router routes
   (hub)/              Portfolio hub + blog (shares Header/footer)
-  cv/                 Printable Harvard CV
+  cv/                 CV page (react-pdf viewer + download)
 src/
   cvData.ts           Types + defaultCVData (the single source of CV content)
   index.css           All styling, including print rules

@@ -95,15 +95,15 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 ### Còn tồn đọng
 - `PersonalInfo.title/.phone/.facebook/.zalo` chưa render.
 - `.gitignore` bỏ qua `dist`, nhưng `dist/` đang tồn tại trong working tree (artifact build cục bộ).
-- Dữ liệu CV mỏng: 1 kinh nghiệm (`bullets` rỗng), 1 dự án (bullet placeholder "Still in development..."), 1 publication.
+- Dữ liệu CV: 1 kinh nghiệm, 1 dự án, 1 publication (đã bỏ bullet placeholder "Still in development...").
 
 ---
 
 ## 7. IN / XUẤT PDF
 
-- Class `.no-print` / `.print-only`.
-- Hai khối `@media print` trong `src/index.css`: **hub** (ẩn chrome, ép trắng-đen, tránh ngắt card) và **Harvard CV** (đen-trắng, link xanh gạch chân, `page-break-inside: avoid`).
-- `/cv` có nút **Print / Save PDF** (`window.print()`).
+- **`/cv` → PDF (chính):** CV được dựng bằng **`@react-pdf/renderer`** (`src/pdf/CvDocument.tsx`), xem trước + tải qua `CvPdfViewer` (client-only, `ssr: false`). File PDF do trình duyệt sinh nên **không dính header/footer của trình duyệt**, kiểm soát được A4/1 trang.
+- **Hub (in trang):** class `.no-print` / `.print-only` + khối `@media print` cho hub trong `src/index.css` (ẩn chrome, ép trắng-đen, tránh ngắt card).
+- (*Đã bỏ* khối print + component HTML CV cũ.)
 
 ---
 
@@ -131,6 +131,11 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 ---
 
 ## 10. NHẬT KÝ THAY ĐỔI (CHANGELOG)
+
+### [v0.13.0] - 2026-10-19
+* **CV → PDF bằng `@react-pdf/renderer`:** thay HTML CV bằng `src/pdf/CvDocument.tsx` + `CvPdfViewer.tsx` (client-only); `/cv` có nút **Download PDF**. PDF sinh trong trình duyệt nên **không dính header/footer**, kiểm soát A4. Bỏ `HarvardCV.tsx` + CSS `.harvard-*` và các alias token cũ ([SPECIFICATION §7](SPECIFICATION.md)).
+* **Nội dung CV (theo góp ý):** Experience → role **Student Researcher**, org **Unlimited AI Research Lab (URA) — HCMUT**, bỏ lặp "from 2024 to present"; Education **GPA: 3.9 / 4.0** + **Expected graduation: 2028**; đồng bộ tên trường; bỏ **"Still in development..."**; viết lại bullets dự án theo **action verbs**; Publication in **`[DOI]`** thay URL dài ([§4](SPECIFICATION.md)).
+* **Sửa bug token:** `.social-icon:hover` dùng `--color-accent-light` (token chưa tồn tại) → thêm token `--color-accent-light` cho light/dark, hover nền đã hoạt động.
 
 ### [v0.12.0] - 2026-10-19
 * **Card project — bố cục hàng nút:** tách **hàng meta** (badge trạng thái + năm) thành **một hàng riêng ngay trên hàng nút**; **ẩn tech tags ở entry** (chỉ còn ở trang chi tiết) để tối ưu chiều dọc; **mở rộng grid** (`.card-grid` min `340px → 420px`). Nhờ đó **GitHub/Demo và "View detail →" luôn cùng hàng và thẳng hàng** ở mọi kích thước (trước đây hàng quá chật nên bị co/wrap gây lệch) ([FRONTEND_SPEC §5](FRONTEND_SPEC.md)).

@@ -1,11 +1,13 @@
 'use client';
 
-import { defaultCVData } from '../../src/cvData';
-import { HarvardCV } from '../../src/components/HarvardCV';
-import { useTheme } from '../../src/useTheme';
+import dynamic from 'next/dynamic';
+
+// @react-pdf/renderer touches browser APIs, so it must not be server-rendered.
+const CvPdfViewer = dynamic(() => import('../../src/pdf/CvPdfViewer'), {
+  ssr: false,
+  loading: () => <p className="cv-loading">Loading CV…</p>,
+});
 
 export default function CVPage() {
-  useTheme();
-
-  return <HarvardCV data={defaultCVData} />;
+  return <CvPdfViewer />;
 }
