@@ -26,6 +26,7 @@ export interface ExperienceItem {
 
 export interface ProjectItem {
   id: string;
+  slug: string;
   title: string;
   description: string;
   role: string;
@@ -60,6 +61,7 @@ export interface LanguageItem {
 
 export interface PublicationItem {
   id: string;
+  slug: string;
   title: string;
   authors: string;
   publisher: string;
@@ -127,6 +129,7 @@ export const defaultCVData: CVContent = {
   projects: [
     {
       id: "proj-1",
+      slug: "bkhome-chatbot",
       title: "BKHome Chatbot",
       description: "An interactive chatbot serves as a comprehensive resource for HCMUT, especially for CSE students, providing quick access to essential information, campus guidance, and AI-powered academic support tools.",
       bullets: [
@@ -182,6 +185,7 @@ export const defaultCVData: CVContent = {
   publications: [
     {
       id: "pub-1",
+      slug: "cost-effective-voice-cloning-vietnamese-tts",
       title: "Towards Cost-Effective Voice Cloning System for Vietnamese TTS: A Case Study at HCMUT",
       authors: "Vinh Q. Vo, Bao G. Quach, Quyen T. Bui, Khai Q. Truong, Long S. T. Nguyen, Fabien Baldacci, Tho T. Quan",
       publisher: "Springer, Singapore",

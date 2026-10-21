@@ -1,48 +1,88 @@
-# Interactive CV Website (`quachgiabao.com`)
+# quachgiabao.com
 
-This repository contains a professional, interactive, and bilingual CV website designed for deployment to GitHub Pages. It features a modern, clean, responsive design with full dark-mode support and optimized print styling for exporting to PDF.
+Personal website for **Quách Gia Bảo** — an interactive CV plus a Markdown blog, built with Next.js 16 (App Router) and exported as a fully static site for GitHub Pages.
+
+See [`docs/SPECIFICATION.md`](./docs/SPECIFICATION.md) for the full technical specification (architecture, data model, blog pipeline, theming, build/deploy) and [`docs/FRONTEND_SPEC.md`](./docs/FRONTEND_SPEC.md) for the UI/navigation spec.
+
+## Surfaces
+
+| Route | Description |
+| --- | --- |
+| `/` | One-page portfolio hub: hero, about, experience, education, publications, projects, achievements, contact |
+| `/cv` | Harvard-style CV, print-optimized for export to PDF |
+| `/blogs`, `/blogs/<slug>`, `/tags` | Markdown blog with KaTeX math, auto table of contents, series grouping, and tags |
 
 ## Features
 
-1. **Bilingual Support (VI / EN)**: Easily toggle between Vietnamese and English versions of your resume with a single click.
-2. **Premium Dark Mode**: Responsive styling supporting dark mode (auto-detected from system settings, with a manual toggle override).
-3. **Live Customizer (Edit Mode)**:
-   - Edit your name, contact information, profile summary, work experience, projects, skills, education, and language proficiencies in real-time directly on the page.
-   - All changes are immediately reflected in the preview and auto-saved to your browser's `localStorage` so you don't lose progress.
-4. **Import/Export JSON**:
-   - Download your complete CV configuration as a JSON file.
-   - Import a previously saved JSON file to load your details instantly on other devices.
-   - Reset to the default template anytime.
-5. **Print & PDF Export**: Optimized print stylesheet to produce a clean, professional, compact A4 layout when printing or saving as a PDF via the browser.
+- **Dark mode** — auto-detected from system settings with a manual toggle. A pre-paint inline script (`app/layout.tsx`) avoids the flash of wrong theme; the choice persists in `localStorage`.
+- **Static search** — client-side search over skills, research interests, projects, publications, experience, and awards. No backend.
+- **Markdown blog** — posts are `.md` files in `content/blog/`. Supports GFM, KaTeX math (`$...$` / `$$...$$`), auto heading anchors + TOC, cover images, per-post series/order grouping with prev/next navigation, and a tag cloud at `/tags`.
+- **Print / PDF export** — dedicated `@media print` styles for both the hub and the Harvard CV, plus a **Print / Save PDF** button on `/cv`.
+
+## Tech Stack
+
+- **Next.js 16** (App Router) + **React 19**, React Compiler enabled
+- **TypeScript** (strict)
+- Static export (`output: 'export'`, `distDir: 'dist'`, `trailingSlash: true`)
+- Plain CSS with custom properties in `src/index.css` (no CSS framework)
+- Blog: `gray-matter`, `react-markdown`, `remark-gfm`, `remark-math`, `rehype-katex`, `rehype-slug`, `github-slugger`
 
 ## Getting Started
 
-### Prerequisites
-
-You need [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) installed on your machine.
-
-### Installation
+Requires [Node.js](https://nodejs.org/) 22+ and [Yarn](https://yarnpkg.com/) 1.x.
 
 ```bash
 yarn install
 ```
 
-### Run Locally
-
-Start the development server:
+Run the dev server:
 
 ```bash
 yarn dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
-### Build for Production
-
-Compile the TypeScript files and bundle the application with Vite:
+## Build
 
 ```bash
 yarn build
 ```
 
-The output will be placed in the `dist/` directory, which is ready to be hosted on GitHub Pages or any static website hosting provider.
+Emits a static site into `dist/`. Preview it locally with:
+
+```bash
+yarn preview
+```
+
+## Lint
+
+```bash
+yarn lint
+```
+
+## Project Structure
+
+```
+app/                  Next.js App Router routes
+  (hub)/              Portfolio hub + blog (shares Header/footer)
+  cv/                 Printable Harvard CV
+src/
+  cvData.ts           Types + defaultCVData (the single source of CV content)
+  index.css           All styling, including print rules
+  useTheme.ts         Theme hook (data-theme + localStorage)
+  lib/blog.ts         Blog loader for content/blog/*.md
+  components/         UI components
+content/blog/         Markdown posts
+public/               Static assets (CNAME, images, favicon)
+docs/                 Project specs (SPECIFICATION.md, FRONTEND_SPEC.md)
+```
+
+## Content
+
+- **CV data** lives in `src/cvData.ts` (`defaultCVData`). Update it there; both the hub and `/cv` read from it.
+- **Blog posts** are Markdown files in `content/blog/`. Add a file and it appears automatically at `/blogs` and `/tags`.
+
+## Deploy
+
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the site and publishes `dist/` to GitHub Pages. The custom domain is set via `public/CNAME` (`quachgiabao.com`).

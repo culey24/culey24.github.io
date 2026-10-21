@@ -51,17 +51,21 @@ export function Publications({ publications }: PublicationsProps) {
 
             {pub.description && <p className="pub-desc">{pub.description}</p>}
 
-            {pub.link && (
-              <a
-                className="btn btn-outline pub-visit"
-                href={pub.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit publication
-                <span aria-hidden="true">→</span>
+            <div className="pub-actions">
+              {pub.link && (
+                <a
+                  className="btn btn-outline"
+                  href={pub.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit publication
+                </a>
+              )}
+              <a className="detail-link" href={`/publications/${pub.slug}`}>
+                View detail <span aria-hidden="true">→</span>
               </a>
-            )}
+            </div>
 
             {pub.link && (
               <div className="print-only">

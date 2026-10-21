@@ -1,7 +1,6 @@
-'use client';
-
 import type { ComponentType } from 'react';
 import { defaultCVData } from '../../src/cvData';
+import { getAllPosts } from '../../src/lib/blog';
 import { Header } from '../../src/components/Header';
 import { GithubIcon, LinkedinIcon, GlobeIcon, FileIcon, type IconProps } from '../../src/components/icons';
 
@@ -13,6 +12,12 @@ interface SocialLink {
 
 export default function HubLayout({ children }: { children: React.ReactNode }) {
   const { personalInfo } = defaultCVData;
+  const posts = getAllPosts().map((post) => ({
+    slug: post.slug,
+    title: post.title,
+    excerpt: post.excerpt,
+    tags: post.tags,
+  }));
 
   const socials = (
     [
@@ -32,7 +37,7 @@ export default function HubLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="page">
-      <Header />
+      <Header posts={posts} />
       {children}
       <footer className="footer">
         <ul className="social-row social-row-footer">

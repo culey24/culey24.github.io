@@ -83,6 +83,7 @@ export function getPostBySlug(slug: string): BlogPostData {
     series: data.series as string | undefined,
     order: typeof data.order === 'number' ? data.order : undefined,
     cover: data.cover as string | undefined,
+    link: data.link as string | undefined,
     readTime: readTimeOf(content),
     content,
     toc: extractToc(content),
@@ -101,22 +102,6 @@ export function getAllPosts(): BlogPostData[] {
       if (oa !== ob) return oa - ob;
       return a.date < b.date ? 1 : -1;
     });
-}
-
-// Metadata only (used by client-side blog explorer) — strips body + toc.
-export function getAllPostsMeta(): BlogPost[] {
-  return getAllPosts().map((post) => ({
-    slug: post.slug,
-    title: post.title,
-    excerpt: post.excerpt,
-    date: post.date,
-    readTime: post.readTime,
-    tags: post.tags,
-    series: post.series,
-    order: post.order,
-    cover: post.cover,
-    link: post.link,
-  }));
 }
 
 export function getPostNeighbors(

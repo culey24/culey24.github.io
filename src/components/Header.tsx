@@ -3,19 +3,17 @@
 import { useEffect, useState } from 'react';
 import { useTheme } from '../useTheme';
 import { defaultCVData } from '../cvData';
-import { Search } from './Search';
+import { Search, type SearchPost } from './Search';
 
-const sections = [
-  { id: 'about', label: 'About Me' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'education', label: 'Education' },
-  { id: 'publications', label: 'Publications' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'achievements', label: 'Achievements' },
-  { id: 'contact', label: 'Contact' },
+const navItems = [
+  { label: 'About Me', href: '/#about' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Publications', href: '/publications' },
+  { label: 'Blog', href: '/blogs' },
+  { label: 'Contact', href: '/contact' },
 ];
 
-export function Header() {
+export function Header({ posts }: { posts: SearchPost[] }) {
   const { isDark, setIsDark } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -41,23 +39,19 @@ export function Header() {
           className={`navbar-links${menuOpen ? ' is-open' : ''}`}
           aria-label="Primary"
         >
-          {sections.map((s) => (
+          {navItems.map((item) => (
             <a
-              key={s.id}
-              href={`/#${s.id}`}
+              key={item.href}
+              href={item.href}
               className="navbar-link"
               onClick={() => setMenuOpen(false)}
             >
-              {s.label}
+              {item.label}
             </a>
           ))}
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- static export; plain anchor avoids client-side RSC prefetch */}
-          <a href="/blogs" className="navbar-link" onClick={() => setMenuOpen(false)}>
-            Blog
-          </a>
         </nav>
 
-        <Search />
+        <Search posts={posts} />
 
         <div className="navbar-controls">
           <button

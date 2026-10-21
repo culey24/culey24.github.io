@@ -29,16 +29,21 @@ export function Projects({ projects }: ProjectsProps) {
             </div>
           )}
           <div className="proj-links">
-            {project.github && (
-              <a className="btn btn-outline" href={project.github} target="_blank" rel="noopener noreferrer">
-                GitHub
-              </a>
-            )}
-            {project.link && (
-              <a className="btn btn-primary" href={project.link} target="_blank" rel="noopener noreferrer">
-                Demo
-              </a>
-            )}
+            <div className="proj-links-left">
+              {project.github && (
+                <a className="btn btn-outline" href={project.github} target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a>
+              )}
+              {project.link && (
+                <a className="btn btn-primary" href={project.link} target="_blank" rel="noopener noreferrer">
+                  Demo
+                </a>
+              )}
+            </div>
+            <a className="detail-link" href={`/projects/${project.slug}`}>
+              View detail <span aria-hidden="true">→</span>
+            </a>
           </div>
           <div className="print-only">
             {project.github && <span>GitHub: {project.github.replace(/^https?:\/\//, '')}</span>}
