@@ -53,7 +53,7 @@ export function Search({ posts }: { posts: SearchPost[] }) {
       hits.push({ label: interest, href: '/', group: 'about' });
     }
     for (const proj of defaultCVData.projects) {
-      hits.push({ label: proj.title, href: '/projects', group: 'research', subtitle: proj.description });
+      hits.push({ label: proj.title, href: '/projects', group: 'research', subtitle: proj.summary });
     }
     for (const pub of defaultCVData.publications ?? []) {
       hits.push({ label: pub.title, href: '/publications', group: 'research', subtitle: pub.authors });

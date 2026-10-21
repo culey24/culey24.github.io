@@ -1,10 +1,6 @@
 'use client';
 
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
-import rehypeSlug from 'rehype-slug';
+import { Markdown } from './Markdown';
 import type { BlogPost, BlogPostData } from '../lib/blog';
 
 interface PostViewProps {
@@ -54,12 +50,7 @@ export function PostView({ post, prev, next }: PostViewProps) {
       )}
 
       <div className="post-body">
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm, remarkMath]}
-          rehypePlugins={[rehypeKatex, rehypeSlug]}
-        >
-          {post.content}
-        </ReactMarkdown>
+        <Markdown>{post.content}</Markdown>
       </div>
 
       {(prev || next) && (

@@ -8,7 +8,7 @@ export function Projects({ projects }: ProjectsProps) {
   return (
     <div className="card-grid proj-grid">
       {projects.map((project) => (
-        <article key={project.id} className="card proj-card">
+        <article key={project.id} className="card proj-card card--link">
           {project.cover && (
             // eslint-disable-next-line @next/next/no-img-element -- static cover image
             <img
@@ -18,24 +18,16 @@ export function Projects({ projects }: ProjectsProps) {
               loading="lazy"
             />
           )}
-          <div className="proj-meta">
-            {project.status && (
+          {project.status && (
+            <div className="proj-meta">
               <span className={`badge badge--${project.statusTone ?? 'neutral'}`}>
                 {project.status}
               </span>
-            )}
-            {project.year && <span className="proj-year">{project.year}</span>}
-          </div>
+            </div>
+          )}
           <p className="proj-role">{project.role}</p>
           <h3 className="proj-title">{project.title}</h3>
-          <p className="proj-desc">{project.description}</p>
-          {project.bullets && project.bullets.length > 0 && (
-            <ul className="bullet-list">
-              {project.bullets.map((bullet, idx) => (
-                <li key={idx}>{bullet}</li>
-              ))}
-            </ul>
-          )}
+          <p className="proj-desc">{project.summary}</p>
           {project.technologies && project.technologies.length > 0 && (
             <div className="proj-tech">
               {project.technologies.map((tech) => (
@@ -47,6 +39,7 @@ export function Projects({ projects }: ProjectsProps) {
           )}
           <div className="proj-links">
             <div className="proj-links-left">
+              {project.year && <span className="proj-year">{project.year}</span>}
               {project.github && (
                 <a className="btn btn-outline" href={project.github} target="_blank" rel="noopener noreferrer">
                   GitHub

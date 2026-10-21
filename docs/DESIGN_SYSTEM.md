@@ -108,6 +108,11 @@
 ### H. Filter chip — `.filter-chip`
 - Button dạng chip (như `.tag`); hover viền `accent` + chữ `accent-2`; `.is-active` → nền `accent`, chữ `solid-ink`.
 
+### I. Whole-card link — `.card--link`
+- Card `position: relative`; link "View detail" giãn phủ toàn card qua `::after { inset: 0 }` → nhấn **bất kỳ đâu** (vùng không phải chữ) mở trang chi tiết.
+- Các link/button khác trong card (`a:not(.detail-link)`, `button`) đặt `position: relative; z-index: 1` để **vẫn bấm được** (GitHub / Demo / Visit publication / Certificate / tiêu đề publication).
+- Hover toàn card kích hoạt trạng thái hover của text link (đổi màu + gạch chân).
+
 ---
 
 ## 6. QUY TẮC PHÂN VAI (tránh lệch màu/kiểu)

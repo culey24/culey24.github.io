@@ -166,7 +166,7 @@ export function HarvardCV({ data }: HarvardCVProps) {
                   </span>
                   <span className="harvard-item-right">{proj.role}</span>
                 </div>
-                <p className="harvard-details-text">{proj.description}</p>
+                <p className="harvard-details-text">{proj.summary}</p>
                 {proj.bullets && proj.bullets.length > 0 && (
                   <ul className="harvard-bullets">
                     {proj.bullets.map((bullet, idx) => (

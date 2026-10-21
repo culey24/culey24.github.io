@@ -71,6 +71,7 @@ Ghi chú schema:
 - Đã bổ sung trường **`slug`** trên `ProjectItem`/`PublicationItem` (v0.8.0) cho trang chi tiết.
 - `AwardItem.certificate` (v0.9.1): đường dẫn PDF trong `public/certificates/` — nút **Certificate** dùng trường này; `proof` giữ vai trò DOI (link "Paper").
 - `ProjectItem` thêm `cover?`, `year?`, `status?`, `statusTone?` (v0.10.0) — ảnh bìa + badge trạng thái.
+- `ProjectItem`: tách `description` → **`summary`** (luôn hiển thị) + **`content?`** (markdown, chỉ ở trang chi tiết) (v0.11.0); `bullets` giữ cho bản in CV.
 - `PublicationItem.certificate?` (v0.10.0) — PDF chứng nhận (vd MIWAI 2025).
 
 ### 4.2 Blog frontmatter — `content/blog/*.md`
@@ -130,6 +131,11 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 ---
 
 ## 10. NHẬT KÝ THAY ĐỔI (CHANGELOG)
+
+### [v0.11.0] - 2026-10-19
+* **Project — tách nội dung:** `ProjectItem.description` → **`summary`** (tóm tắt) + **`content`** (markdown chi tiết). Entry ở trang chủ và trang chi tiết chỉ hiển thị **summary** trước; nội dung markdown chỉ ở trang chi tiết ([SPECIFICATION §4](SPECIFICATION.md)). Thêm component `Markdown` dùng chung (PostView cũng dùng lại).
+* **Card project:** đưa **năm** xuống hàng cuối (trước nút GitHub/Demo); **whole-card link** — nhấn vùng trống trên card mở trang chi tiết ([DESIGN_SYSTEM §5.I](DESIGN_SYSTEM.md)).
+* **Trang chi tiết project:** **breadcrumb `Projects › {title}`**, **tên dự án lên đầu**, role/status/năm xuống dưới tên, cover, summary, nội dung markdown; **nâng cỡ chữ tổng thể** ([FRONTEND_SPEC §5](FRONTEND_SPEC.md)). Trang chi tiết publication đồng bộ breadcrumb + tiêu đề lớn.
 
 ### [v0.10.0] - 2026-10-19
 * **Palette mở rộng (giữ xanh primary):** thêm `--color-accent-alt` (secondary), `--color-success/warning/danger/info`; accent dark đổi `#ffffff` → `#6ea8fe` để dark mode có màu; cập nhật [DESIGN_SYSTEM §1](DESIGN_SYSTEM.md).

@@ -28,7 +28,8 @@ export interface ProjectItem {
   id: string;
   slug: string;
   title: string;
-  description: string;
+  summary: string;
+  content?: string;
   role: string;
   technologies: string[];
   link?: string;
@@ -141,7 +142,20 @@ export const defaultCVData: CVContent = {
       year: "2024 - present",
       status: "In development",
       statusTone: "warning",
-      description: "An interactive chatbot serves as a comprehensive resource for HCMUT, especially for CSE students, providing quick access to essential information, campus guidance, and AI-powered academic support tools.",
+      summary: "An AI-powered campus assistant giving HCMUT students quick access to essential information, campus guidance, and academic support tools.",
+      content: [
+        "An interactive chatbot that serves as a comprehensive resource for HCMUT, especially CSE students — quick access to essential information, campus guidance, and AI-powered academic support tools.",
+        "",
+        "## Highlights",
+        "",
+        "- Optimized search performance with hierarchical indexing over documents.",
+        "- Integrated OpenRouter for NLP tasks, with responses validated through the Pydantic framework.",
+        "- Deployed using Google Cloud Run for the microservices backend and Vercel for the frontend.",
+        "",
+        "## Status",
+        "",
+        "Still in development — new features are being added.",
+      ].join("\n"),
       bullets: [
         "Optimized searching performance by applying hierarchical indexing on documents.",
         "Integrated OpenRouter for NLP tasks, validating using Pydantic framework",

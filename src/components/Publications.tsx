@@ -12,7 +12,7 @@ export function Publications({ publications }: PublicationsProps) {
       {publications.map((pub, idx) => {
         const authors = pub.authors.split(',').map((author) => author.trim());
         return (
-          <li key={pub.id} className="card pub-item">
+          <li key={pub.id} className="card pub-item card--link">
             <p className="pub-title-row">
               <span className="pub-num">[{idx + 1}]</span>
               {pub.link ? (
