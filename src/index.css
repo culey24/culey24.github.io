@@ -1287,8 +1287,10 @@ a.tag:hover {
 }
 
 .proj-year {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
+  line-height: 1;
   color: var(--color-ink-3);
+  white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
 
@@ -1357,6 +1359,7 @@ a.tag:hover {
 
 .proj-links-left {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: var(--space-sm);
 }
