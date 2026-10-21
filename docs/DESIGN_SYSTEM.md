@@ -18,11 +18,18 @@
 | `--color-ink-2` | `#6c757d` | `#b0b3b8` | chữ phụ (body mặc định) |
 | `--color-ink-3` | `#8b959e` | `#8d9196` | chữ mờ (meta, ghi chú) |
 | `--color-rule` | `#d7dde3` | `#343a40` | viền, divider |
-| `--color-accent` | `#007bff` | `#ffffff` | **màu nhấn** (link, nút) |
-| `--color-accent-2` | `#0056b3` | `#c9cdd3` | nhấn đậm (**trạng thái hover**) |
+| `--color-accent` | `#007bff` | `#6ea8fe` | **màu nhấn** (link, nút) |
+| `--color-accent-2` | `#0056b3` | `#9ec5fe` | nhấn đậm (**trạng thái hover**) |
+| `--color-accent-alt` | `#7c3aed` | `#c4b5fd` | nhấn phụ (secondary accent) |
+| `--color-success` | `#15803d` | `#4ade80` | trạng thái tích cực |
+| `--color-warning` | `#b45309` | `#fbbf24` | trạng thái đang làm / cảnh báo |
+| `--color-danger` | `#dc2626` | `#f87171` | lỗi / nguy hiểm |
+| `--color-info` | `= accent` | `= accent` | thông tin |
 | `--color-link` | `= accent` | `= accent` | alias màu link |
 | `--color-focus` | `= accent` | `= accent` | outline focus |
 | `--color-solid*` | ink/white | ink/paper | nút primary |
+
+> **v0.10.0 — mở rộng palette:** giữ xanh làm primary, thêm **secondary accent** + **semantic** (success/warning/danger/info). Accent ở dark đổi từ trắng `#ffffff` → xanh nhạt `#6ea8fe` để dark mode cũng có màu.
 
 **Quy tắc:** không hardcode mã màu trong component — luôn dùng token. Màu nhấn **chỉ** dùng cho link/hành động, không dùng làm màu chữ nội dung.
 
@@ -93,6 +100,13 @@
 
 ### F. Icon tròn — `.social-icon`
 - default: viền `rule`; hover: chữ `link`, viền `accent`, nền `accent-light`.
+
+### G. Badge — `.badge` (+ `--info` / `--success` / `--warning`)
+- Pill nhỏ, chữ `--text-xs`, weight 600; màu lấy từ tone (`color-mix` 12–45% với semantic token).
+- Dùng cho trạng thái: vd project *"In development"* → `.badge--warning`.
+
+### H. Filter chip — `.filter-chip`
+- Button dạng chip (như `.tag`); hover viền `accent` + chữ `accent-2`; `.is-active` → nền `accent`, chữ `solid-ink`.
 
 ---
 

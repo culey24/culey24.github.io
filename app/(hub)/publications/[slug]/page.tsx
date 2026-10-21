@@ -66,17 +66,29 @@ export default async function PublicationDetailPage({
 
         {pub.description && <p className="pub-desc">{pub.description}</p>}
 
-        {pub.link && (
-          <p>
-            <a
-              className="btn btn-outline"
-              href={pub.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit publication
-            </a>
-          </p>
+        {(pub.link || pub.certificate) && (
+          <div className="action-row">
+            {pub.link && (
+              <a
+                className="btn btn-outline"
+                href={pub.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit publication
+              </a>
+            )}
+            {pub.certificate && (
+              <a
+                className="btn btn-outline"
+                href={pub.certificate}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Certificate
+              </a>
+            )}
+          </div>
         )}
 
         <p className="back-link">

@@ -52,16 +52,28 @@ export function Publications({ publications }: PublicationsProps) {
             {pub.description && <p className="pub-desc">{pub.description}</p>}
 
             <div className="pub-actions">
-              {pub.link && (
-                <a
-                  className="btn btn-outline"
-                  href={pub.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Visit publication
-                </a>
-              )}
+              <div className="pub-actions-left">
+                {pub.link && (
+                  <a
+                    className="btn btn-outline"
+                    href={pub.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visit publication
+                  </a>
+                )}
+                {pub.certificate && (
+                  <a
+                    className="btn btn-outline"
+                    href={pub.certificate}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Certificate
+                  </a>
+                )}
+              </div>
               <a className="detail-link" href={`/publications/${pub.slug}`}>
                 View detail <span aria-hidden="true">→</span>
               </a>

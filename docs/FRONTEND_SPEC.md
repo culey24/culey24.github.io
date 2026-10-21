@@ -140,17 +140,18 @@ Social icons (GitHub, LinkedIn, Website, link `/cv`) + `© {năm} {tên}` + "Bui
 ## 5. TRANG PROJECTS — `/projects`
 
 - **Mục đích:** liệt kê **toàn bộ** `defaultCVData.projects`.
-- **Nội dung mỗi item:** dùng lại thẻ `Projects.tsx` (role, tiêu đề, mô tả, bullets, tech tags, nút GitHub/Demo) + **"View detail →"**.
-- **Trang chi tiết `/projects/{slug}`** (`app/(hub)/projects/[slug]/page.tsx`): role, tiêu đề, mô tả, bullets, tech tags, GitHub/Demo, link "← Back to projects". Dùng `generateStaticParams` + `dynamicParams = false`.
+- **Card:** **cover image** (`.proj-cover`, lấy từ `ProjectItem.cover`), hàng **badge** trạng thái (`.badge--{tone}`) + **năm** (`.proj-year`), rồi role/tiêu đề/mô tả/bullets/tech tags, cuối cùng hàng hành động (GitHub/Demo + "View detail →").
+- **Lọc theo công nghệ** (v0.10.0): `ProjectsExplorer` (client) — dãy `.filter-chip` (All + các tech), chọn chip để lọc; rỗng → thông báo.
+- **Trang chi tiết `/projects/{slug}`** (`app/(hub)/projects/[slug]/page.tsx`): cover lớn (`.detail-cover`), badge + năm, role, tiêu đề, mô tả, bullets, tech tags, GitHub/Demo, "← Back to projects". `generateStaticParams` + `dynamicParams = false`.
 - **Trạng thái rỗng:** thông báo khi chưa có project.
-- **Mở rộng (đề xuất):** lọc theo công nghệ; tìm kiếm.
+- **Mở rộng (đề xuất):** ghim project nổi bật; tìm kiếm.
 
 ## 6. TRANG PUBLICATIONS — `/publications`
 
-- **Mục đích:** liệt kê **toàn bộ** `defaultCVData.publications`.
-- **Nội dung mỗi item:** dùng lại thẻ `Publications.tsx` (danh sách đánh số, in đậm tên tác giả chính qua `myName`), nút **"Visit publication"** (không mũi tên), link thô `.print-only`, + **"View detail →"** ở góc phải dưới.
-- **Trang chi tiết `/publications/{slug}`** (`app/(hub)/publications/[slug]/page.tsx`): tiêu đề, authors (in đậm tác giả chính), publisher/date, mô tả, "Visit publication", link "← Back to publications". `generateStaticParams` + `dynamicParams = false`.
-- **Mở rộng (đề xuất):** lọc/nhóm theo năm; trích dẫn (BibTeX).
+- **Mục đích:** liệt kê **toàn bộ** `defaultCVData.publications`, **nhóm theo năm** (v0.10.0; tiêu đề năm dùng `.blog-series-title`).
+- **Nội dung mỗi item:** dùng lại thẻ `Publications.tsx` (danh sách đánh số, in đậm tên tác giả chính qua `myName`), nút **"Visit publication"** + **"Certificate"** (PDF, nếu có), link thô `.print-only`, + **"View detail →"** ở góc phải dưới.
+- **Trang chi tiết `/publications/{slug}`** (`app/(hub)/publications/[slug]/page.tsx`): tiêu đề, authors (in đậm tác giả chính), publisher/date, mô tả, hàng hành động "Visit publication" + "Certificate", link "← Back to publications". `generateStaticParams` + `dynamicParams = false`.
+- **Mở rộng (đề xuất):** lọc/sắp xếp theo năm; trích dẫn (BibTeX).
 
 ---
 

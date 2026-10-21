@@ -37,6 +37,18 @@ export default async function ProjectDetailPage({
   return (
     <>
       <section className="section blog-head">
+        {project.cover && (
+          // eslint-disable-next-line @next/next/no-img-element -- static cover image
+          <img className="detail-cover" src={project.cover} alt={`${project.title} cover`} />
+        )}
+        <div className="proj-meta">
+          {project.status && (
+            <span className={`badge badge--${project.statusTone ?? 'neutral'}`}>
+              {project.status}
+            </span>
+          )}
+          {project.year && <span className="proj-year">{project.year}</span>}
+        </div>
         <p className="proj-role">{project.role}</p>
         <h1 className="section-title">{project.title}</h1>
       </section>

@@ -240,7 +240,7 @@ export default function HomePage() {
               {award.issuer && <p className="award-issuer">{award.issuer}</p>}
               {award.details && <p className="award-desc">{award.details}</p>}
               {(award.certificate || award.proof) && (
-                <div className="award-actions">
+                <div className="action-row">
                   {award.certificate && (
                     <a
                       className="btn btn-outline"

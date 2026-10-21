@@ -34,6 +34,10 @@ export interface ProjectItem {
   link?: string;
   github?: string;
   bullets?: string[];
+  cover?: string;
+  year?: string;
+  status?: string;
+  statusTone?: 'success' | 'warning' | 'info' | 'neutral';
 }
 
 export interface SkillCategory {
@@ -68,6 +72,7 @@ export interface PublicationItem {
   date: string;
   link?: string;
   description?: string;
+  certificate?: string;
 }
 
 export interface AwardItem {
@@ -132,6 +137,10 @@ export const defaultCVData: CVContent = {
       id: "proj-1",
       slug: "bkhome-chatbot",
       title: "BKHome Chatbot",
+      cover: "/projects/bkhome-chatbot.png",
+      year: "2024 - present",
+      status: "In development",
+      statusTone: "warning",
       description: "An interactive chatbot serves as a comprehensive resource for HCMUT, especially for CSE students, providing quick access to essential information, campus guidance, and AI-powered academic support tools.",
       bullets: [
         "Optimized searching performance by applying hierarchical indexing on documents.",
@@ -192,6 +201,7 @@ export const defaultCVData: CVContent = {
       publisher: "Springer, Singapore",
       date: "Nov 22, 2025",
       link: "https://doi.org/10.1007/978-981-95-4963-4_18",
+      certificate: "/certificates/miwai-2025.pdf",
       description: "Proposed a voice cloning method for data-scarce scenarios, requiring only 10–30 minutes of speech and optimized for low-complexity environments like Google Colab. By leveraging So-VITS-SVC, a robust voice conversion model, and the acoustic precision of Parselmouth, the system achieves high-quality, low-latency voice synthesis suitable for both research and practical applications."
     }
   ],

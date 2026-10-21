@@ -70,6 +70,8 @@ Ghi chú schema:
 - `PersonalInfo.title`, `.phone`, `.facebook`, `.zalo` **đã khai báo nhưng chưa render**.
 - Đã bổ sung trường **`slug`** trên `ProjectItem`/`PublicationItem` (v0.8.0) cho trang chi tiết.
 - `AwardItem.certificate` (v0.9.1): đường dẫn PDF trong `public/certificates/` — nút **Certificate** dùng trường này; `proof` giữ vai trò DOI (link "Paper").
+- `ProjectItem` thêm `cover?`, `year?`, `status?`, `statusTone?` (v0.10.0) — ảnh bìa + badge trạng thái.
+- `PublicationItem.certificate?` (v0.10.0) — PDF chứng nhận (vd MIWAI 2025).
 
 ### 4.2 Blog frontmatter — `content/blog/*.md`
 `title`, `date` (YYYY-MM-DD), `tags[]`, `excerpt?`, `series?`, `order?`, `cover?`, `link?` (link ngoài).
@@ -128,6 +130,11 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 ---
 
 ## 10. NHẬT KÝ THAY ĐỔI (CHANGELOG)
+
+### [v0.10.0] - 2026-10-19
+* **Palette mở rộng (giữ xanh primary):** thêm `--color-accent-alt` (secondary), `--color-success/warning/danger/info`; accent dark đổi `#ffffff` → `#6ea8fe` để dark mode có màu; cập nhật [DESIGN_SYSTEM §1](DESIGN_SYSTEM.md).
+* **Projects:** thêm **cover image** + **badge trạng thái** (`statusTone`) + **năm**; trang `/projects` có **lọc theo công nghệ** (`ProjectsExplorer` + `.filter-chip`); trang chi tiết có cover lớn ([FRONTEND_SPEC §5](FRONTEND_SPEC.md)).
+* **Publications:** **nhóm theo năm** ở `/publications`; thêm trường `certificate` — nút **Certificate** (vd file MIWAI 2025) trên card và trang chi tiết ([FRONTEND_SPEC §6](FRONTEND_SPEC.md)).
 
 ### [v0.9.1] - 2026-10-19
 * **Certificate có đích:** thêm trường `AwardItem.certificate`; copy chứng nhận vào `public/certificates/` (`osts-2025-first-prize.pdf`, `miwai-2025.pdf`); nút **Certificate** của giải *First Prize OSTS 2025* giờ mở **PDF**, DOI chuyển thành link **"Paper"** ([FRONTEND_SPEC §4](FRONTEND_SPEC.md)). *(File `miwai-2025.pdf` chưa gắn vào mục nào — chờ chốt.)*

@@ -9,6 +9,23 @@ export function Projects({ projects }: ProjectsProps) {
     <div className="card-grid proj-grid">
       {projects.map((project) => (
         <article key={project.id} className="card proj-card">
+          {project.cover && (
+            // eslint-disable-next-line @next/next/no-img-element -- static cover image
+            <img
+              className="proj-cover"
+              src={project.cover}
+              alt={`${project.title} cover`}
+              loading="lazy"
+            />
+          )}
+          <div className="proj-meta">
+            {project.status && (
+              <span className={`badge badge--${project.statusTone ?? 'neutral'}`}>
+                {project.status}
+              </span>
+            )}
+            {project.year && <span className="proj-year">{project.year}</span>}
+          </div>
           <p className="proj-role">{project.role}</p>
           <h3 className="proj-title">{project.title}</h3>
           <p className="proj-desc">{project.description}</p>

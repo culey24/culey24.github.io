@@ -1,5 +1,5 @@
 import { defaultCVData } from '../../../src/cvData';
-import { Projects } from '../../../src/components/Projects';
+import { ProjectsExplorer } from '../../../src/components/ProjectsExplorer';
 
 export default function ProjectsPage() {
   const projects = defaultCVData.projects;
@@ -16,7 +16,7 @@ export default function ProjectsPage() {
         </div>
       ) : (
         <div className="section">
-          <Projects projects={projects} />
+          <ProjectsExplorer projects={projects} />
         </div>
       )}
     </>
