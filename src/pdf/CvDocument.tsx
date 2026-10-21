@@ -28,7 +28,7 @@ const myName = 'Bao G. Quach';
 
 const styles = StyleSheet.create({
   page: {
-    paddingVertical: 30,
+    paddingVertical: 28,
     paddingHorizontal: 38,
     fontSize: 9.2,
     fontFamily: 'Inter',
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     textDecoration: 'none',
   },
   section: {
-    marginTop: 10,
+    marginTop: 8,
   },
   sectionTitle: {
     fontFamily: 'SourceSerif',
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   item: {
-    marginBottom: 6,
+    marginBottom: 5,
   },
   row: {
     flexDirection: 'row',

@@ -132,6 +132,10 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 
 ## 10. NHẬT KÝ THAY ĐỔI (CHANGELOG)
 
+### [v0.13.3] - 2026-10-21
+* **Viết lại nội dung project BKHome Chatbot** (bám repo thật): **agentic chatbot** là trung tâm, nền tảng **microservices** (Fastify gateway, FastAPI RAG service, React frontend), **retrieval 2 giai đoạn** (FAQ semantic ≥ 0.90 bỏ qua LLM → parent–child document RAG phân cấp), **cross-encoder reranking** (Cohere rerank-v3.5), **metadata filter** (domain/major/doc_type), **semantic cache**, **query rewrite** viết tắt tiếng Việt (HP, ĐKMH, HK232), **Neo4j** cho heading tree + glossary graph. Cập nhật tech chips: Python, FastAPI, Node.js/Fastify, React, PostgreSQL + pgvector, Neo4j, Docker.
+* **CV giữ 1 trang** sau khi thêm nội dung (siết nhẹ spacing; verify: 1 page, lấp ~807/814pt).
+
 ### [v0.13.2] - 2026-10-21
 * **CV — typography & sửa lỗi trình bày:**
   * Thêm **Source Serif 4** cho tên + tiêu đề mục (Inter giữ cho nội dung) — nhúng vào PDF.
