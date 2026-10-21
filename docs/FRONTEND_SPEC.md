@@ -140,7 +140,8 @@ Social icons (GitHub, LinkedIn, Website, link `/cv`) + `© {năm} {tên}` + "Bui
 ## 5. TRANG PROJECTS — `/projects`
 
 - **Mục đích:** liệt kê **toàn bộ** `defaultCVData.projects`.
-- **Card:** **cover image** (`.proj-cover`), badge trạng thái (nếu có), role, tiêu đề, **summary** (chỉ tóm tắt — v0.11.0), tech tags, rồi hàng cuối: **năm** + GitHub/Demo ở trái và **"View detail →"** ở phải.
+- **Card:** cover image (`.proj-cover`) → role → tiêu đề → **summary** (chỉ tóm tắt) → **hàng meta riêng** (badge trạng thái + **năm**) nằm **ngay trên hàng nút** → hàng nút: **GitHub/Demo bên trái**, **"View detail →" bên phải** (v0.12.0).
+- **Tech tags ẩn ở entry** (chỉ hiện ở trang chi tiết) để tối ưu chiều dọc (v0.12.0); grid `.card-grid` mở rộng (min `420px`) → card rộng hơn.
 - **Whole-card link** (v0.11.0): nhấn bất kỳ đâu trên card (vùng không phải chữ) → mở trang chi tiết (`.card--link`); nút GitHub/Demo vẫn bấm riêng được ([DESIGN_SYSTEM §5.I](DESIGN_SYSTEM.md)).
 - **Lọc theo công nghệ** (v0.10.0): `ProjectsExplorer` (client) — dãy `.filter-chip` (All + các tech), chọn chip để lọc; rỗng → thông báo.
 - **Trang chi tiết `/projects/{slug}`** (v0.11.0): **breadcrumb `Projects › {title}`** → **tiêu đề** (`--` cỡ lớn) → hàng meta (**role** + badge trạng thái + năm) → **cover** → **summary** → **nội dung markdown** (`.detail-body`) → tech tags → GitHub/Demo → "← Back to projects". `generateStaticParams` + `dynamicParams = false`.

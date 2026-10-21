@@ -132,6 +132,9 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 
 ## 10. NHẬT KÝ THAY ĐỔI (CHANGELOG)
 
+### [v0.12.0] - 2026-10-19
+* **Card project — bố cục hàng nút:** tách **hàng meta** (badge trạng thái + năm) thành **một hàng riêng ngay trên hàng nút**; **ẩn tech tags ở entry** (chỉ còn ở trang chi tiết) để tối ưu chiều dọc; **mở rộng grid** (`.card-grid` min `340px → 420px`). Nhờ đó **GitHub/Demo và "View detail →" luôn cùng hàng và thẳng hàng** ở mọi kích thước (trước đây hàng quá chật nên bị co/wrap gây lệch) ([FRONTEND_SPEC §5](FRONTEND_SPEC.md)).
+
 ### [v0.11.0] - 2026-10-19
 * **Project — tách nội dung:** `ProjectItem.description` → **`summary`** (tóm tắt) + **`content`** (markdown chi tiết). Entry ở trang chủ và trang chi tiết chỉ hiển thị **summary** trước; nội dung markdown chỉ ở trang chi tiết ([SPECIFICATION §4](SPECIFICATION.md)). Thêm component `Markdown` dùng chung (PostView cũng dùng lại).
 * **Card project:** đưa **năm** xuống hàng cuối (trước nút GitHub/Demo); **whole-card link** — nhấn vùng trống trên card mở trang chi tiết ([DESIGN_SYSTEM §5.I](DESIGN_SYSTEM.md)).
