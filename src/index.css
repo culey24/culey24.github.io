@@ -1351,8 +1351,8 @@ a.tag:hover {
 .proj-links {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-sm);
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-sm);
   margin-top: auto;
   padding-top: var(--space-sm);
 }
@@ -1361,7 +1361,11 @@ a.tag:hover {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--space-sm);
+  gap: var(--space-2xs);
+}
+
+.proj-links .btn {
+  padding-inline: var(--space-sm);
 }
 
 .proj-links .detail-link {
