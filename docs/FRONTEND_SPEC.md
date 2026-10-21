@@ -179,7 +179,7 @@ Social icons (GitHub, LinkedIn, Website, link `/cv`) + `© {năm} {tên}` + "Bui
 
 ## 9. CV PAGE — `/cv`
 
-`app/cv/page.tsx` → dynamic import (`ssr: false`) [`CvPdfViewer`](../src/pdf/CvPdfViewer.tsx) → [`CvDocument`](../src/pdf/CvDocument.tsx) dựng bằng **`@react-pdf/renderer`** (khổ A4). Trang có nút **Download PDF** (`Quach-Gia-Bao-CV.pdf`) + "← Back to Hub"; không dùng Header/Footer. PDF sinh trong trình duyệt nên **không dính header/footer của trình duyệt** ([SPECIFICATION §7](SPECIFICATION.md)).
+`app/cv/page.tsx` → dynamic import (`ssr: false`) [`CvPdfViewer`](../src/pdf/CvPdfViewer.tsx) → [`CvDocument`](../src/pdf/CvDocument.tsx) dựng bằng **`@react-pdf/renderer`** (khổ A4). **Font Inter được nhúng** (`public/fonts/*.ttf`, đăng ký qua `Font.register`) nên PDF không phụ thuộc font base-14 của viewer. Trang có nút **Download PDF** (`Quach-Gia-Bao-CV.pdf`) + "← Back to Hub"; không dùng Header/Footer. PDF sinh trong trình duyệt nên **không dính header/footer của trình duyệt** ([SPECIFICATION §7](SPECIFICATION.md)).
 
 ---
 

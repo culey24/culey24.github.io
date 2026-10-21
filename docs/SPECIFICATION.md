@@ -132,6 +132,10 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 
 ## 10. NHẬT KÝ THAY ĐỔI (CHANGELOG)
 
+### [v0.13.1] - 2026-10-21
+* **CV — nhúng font:** `CvDocument` dùng **Inter** (Regular/Bold/Italic) và **nhúng thẳng vào PDF** (file `.ttf` ở `public/fonts/`) thay cho base-14 Helvetica **không nhúng** — khắc phục lỗi font hiển thị tuỳ viewer. PDF vẫn **1 trang A4**, text vẫn trích xuất/copy được ([SPECIFICATION §7](SPECIFICATION.md)).
+* **Project link:** BKHome Chatbot → **`https://cse.hcmut.edu.vn/en/chatbot`** ([§4](SPECIFICATION.md)).
+
 ### [v0.13.0] - 2026-10-19
 * **CV → PDF bằng `@react-pdf/renderer`:** thay HTML CV bằng `src/pdf/CvDocument.tsx` + `CvPdfViewer.tsx` (client-only); `/cv` có nút **Download PDF**. PDF sinh trong trình duyệt nên **không dính header/footer**, kiểm soát A4. Bỏ `HarvardCV.tsx` + CSS `.harvard-*` và các alias token cũ ([SPECIFICATION §7](SPECIFICATION.md)).
 * **Nội dung CV (theo góp ý):** Experience → role **Student Researcher**, org **Unlimited AI Research Lab (URA) — HCMUT**, bỏ lặp "from 2024 to present"; Education **GPA: 3.9 / 4.0** + **Expected graduation: 2028**; đồng bộ tên trường; bỏ **"Still in development..."**; viết lại bullets dự án theo **action verbs**; Publication in **`[DOI]`** thay URL dài ([§4](SPECIFICATION.md)).

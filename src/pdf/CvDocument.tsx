@@ -1,24 +1,33 @@
 'use no memo';
 
-import { Document, Page, Text, View, Link, StyleSheet } from '@react-pdf/renderer';
+import { Document, Page, Text, View, Link, StyleSheet, Font } from '@react-pdf/renderer';
 import type { CVContent } from '../cvData';
 
 interface CvDocumentProps {
   data: CVContent;
 }
 
+Font.register({
+  family: 'Inter',
+  fonts: [
+    { src: '/fonts/Inter-Regular.ttf', fontWeight: 400 },
+    { src: '/fonts/Inter-Bold.ttf', fontWeight: 700 },
+    { src: '/fonts/Inter-Italic.ttf', fontWeight: 400, fontStyle: 'italic' },
+  ],
+});
+
 const styles = StyleSheet.create({
   page: {
     paddingVertical: 30,
     paddingHorizontal: 38,
     fontSize: 8.6,
-    fontFamily: 'Helvetica',
+    fontFamily: 'Inter',
     color: '#111827',
     lineHeight: 1.35,
   },
   name: {
     fontSize: 17,
-    fontFamily: 'Helvetica-Bold',
+    fontWeight: 700,
     letterSpacing: 0.6,
     textAlign: 'center',
     color: '#111827',
@@ -38,7 +47,7 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 9.6,
-    fontFamily: 'Helvetica-Bold',
+    fontWeight: 700,
     letterSpacing: 0.7,
     color: '#111827',
   },
@@ -56,11 +65,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   bold: {
-    fontFamily: 'Helvetica-Bold',
+    fontWeight: 700,
     color: '#111827',
   },
   italic: {
-    fontFamily: 'Helvetica-Oblique',
+    fontStyle: 'italic',
     color: '#4b5563',
   },
   muted: {

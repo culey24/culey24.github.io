@@ -159,7 +159,7 @@ export const defaultCVData: CVContent = {
       ],
       role: "Lead Developer",
       technologies: ["Pydantic", "React", "TypeScript", "Node.js", "PostgreSQL"],
-      link: "https://bkhome-chatbot.vercel.app/login",
+      link: "https://cse.hcmut.edu.vn/en/chatbot",
       github: "https://github.com/culey24/bkhome-chatbot"
     }
   ],
