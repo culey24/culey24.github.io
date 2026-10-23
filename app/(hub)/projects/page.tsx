@@ -1,5 +1,10 @@
+import type { Metadata } from 'next';
 import { defaultCVData } from '../../../src/cvData';
 import { ProjectsExplorer } from '../../../src/components/ProjectsExplorer';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/projects/' },
+};
 
 export default function ProjectsPage() {
   const projects = defaultCVData.projects;

@@ -74,7 +74,7 @@ export function Publications({ publications }: PublicationsProps) {
                   </a>
                 )}
               </div>
-              <a className="detail-link" href={`/publications/${pub.slug}`}>
+              <a className="detail-link" href={`/publications/${pub.slug}/`}>
                 View detail <span aria-hidden="true">→</span>
               </a>
             </div>

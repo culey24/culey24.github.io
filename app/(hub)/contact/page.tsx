@@ -1,4 +1,9 @@
+import type { Metadata } from 'next';
 import { Contact } from '../../../src/components/Contact';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/contact/' },
+};
 
 export default function ContactPage() {
   return (

@@ -44,7 +44,7 @@ export function Projects({ projects }: ProjectsProps) {
                 </a>
               )}
             </div>
-            <a className="detail-link" href={`/projects/${project.slug}`}>
+            <a className="detail-link" href={`/projects/${project.slug}/`}>
               View detail <span aria-hidden="true">→</span>
             </a>
           </div>

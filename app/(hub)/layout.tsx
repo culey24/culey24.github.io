@@ -59,7 +59,7 @@ export default function HubLayout({ children }: { children: React.ReactNode }) {
             </li>
           ))}
           <li>
-            <a className="social-icon" href="/cv" aria-label="CV" title="CV">
+            <a className="social-icon" href="/cv/" aria-label="CV" title="CV">
               <FileIcon size={18} />
             </a>
           </li>

@@ -1,5 +1,10 @@
+import type { Metadata } from 'next';
 import { getAllPosts, type BlogPostData } from '../../../src/lib/blog';
 import { BlogCard } from '../../../src/components/BlogCard';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/blogs/' },
+};
 
 export default function BlogsPage() {
   const posts = getAllPosts();
@@ -65,7 +70,7 @@ export default function BlogsPage() {
             <ul className="blog-side-list">
               {latest.map((post) => (
                 <li key={post.slug}>
-                  <a href={`/blogs/${post.slug}`}>{post.title}</a>
+                  <a href={`/blogs/${post.slug}/`}>{post.title}</a>
                   <span className="blog-side-date">{post.date}</span>
                 </li>
               ))}

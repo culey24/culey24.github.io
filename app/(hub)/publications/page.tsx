@@ -1,5 +1,10 @@
+import type { Metadata } from 'next';
 import { defaultCVData } from '../../../src/cvData';
 import { Publications } from '../../../src/components/Publications';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/publications/' },
+};
 
 function yearOf(date: string): string {
   const match = /(\d{4})/.exec(date);

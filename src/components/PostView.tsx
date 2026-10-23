@@ -25,7 +25,7 @@ export function PostView({ post, prev, next }: PostViewProps) {
         {post.tags.length > 0 && (
           <div className="blog-tags">
             {post.tags.map((tag) => (
-              <a key={tag} className="tag" href={`/tags#${tag}`}>
+              <a key={tag} className="tag" href={`/tags/#${tag}`}>
                 #{tag}
               </a>
             ))}
@@ -56,13 +56,13 @@ export function PostView({ post, prev, next }: PostViewProps) {
       {(prev || next) && (
         <nav className="post-nav" aria-label="Post navigation">
           {next && (
-            <a href={`/blogs/${next.slug}`} className="post-nav-link">
+            <a href={`/blogs/${next.slug}/`} className="post-nav-link">
               <span>Newer</span>
               <strong>{next.title}</strong>
             </a>
           )}
           {prev && (
-            <a href={`/blogs/${prev.slug}`} className="post-nav-link post-nav-next">
+            <a href={`/blogs/${prev.slug}/`} className="post-nav-link post-nav-next">
               <span>Older</span>
               <strong>{prev.title}</strong>
             </a>
@@ -71,7 +71,7 @@ export function PostView({ post, prev, next }: PostViewProps) {
       )}
 
       {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- static export */}
-      <a className="post-back" href="/blogs">
+      <a className="post-back" href="/blogs/">
         ← Back to blog
       </a>
     </article>

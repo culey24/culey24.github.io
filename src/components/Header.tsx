@@ -7,10 +7,10 @@ import { Search, type SearchPost } from './Search';
 
 const navItems = [
   { label: 'About Me', href: '/#about' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Publications', href: '/publications' },
-  { label: 'Blog', href: '/blogs' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Projects', href: '/projects/' },
+  { label: 'Publications', href: '/publications/' },
+  { label: 'Blog', href: '/blogs/' },
+  { label: 'Contact', href: '/contact/' },
 ];
 
 export function Header({ posts }: { posts: SearchPost[] }) {

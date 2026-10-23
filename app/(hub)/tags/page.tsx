@@ -1,4 +1,9 @@
+import type { Metadata } from 'next';
 import { getAllPosts, type BlogPostData } from '../../../src/lib/blog';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/tags/' },
+};
 
 export default function TagsPage() {
   const posts = getAllPosts();
@@ -41,7 +46,7 @@ export default function TagsPage() {
               <ul className="tags-post-list">
                 {items.map((post) => (
                   <li key={post.slug}>
-                    <a href={`/blogs/${post.slug}`}>{post.title}</a>
+                    <a href={`/blogs/${post.slug}/`}>{post.title}</a>
                     <span className="tags-post-date">{post.date}</span>
                   </li>
                 ))}

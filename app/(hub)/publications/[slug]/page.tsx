@@ -24,6 +24,7 @@ export async function generateMetadata({
   return {
     title: pub ? `${pub.title} — Bao Quach` : 'Publication — Bao Quach',
     description: pub?.description,
+    alternates: { canonical: `/publications/${slug}/` },
   };
 }
 
@@ -42,7 +43,7 @@ export default async function PublicationDetailPage({
     <article className="section detail">
       <nav className="breadcrumb" aria-label="Breadcrumb">
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- static export; plain anchor avoids client-side RSC prefetch */}
-        <a href="/publications">Publications</a>
+        <a href="/publications/">Publications</a>
         <span className="breadcrumb-sep" aria-hidden="true">
           ›
         </span>
@@ -103,7 +104,7 @@ export default async function PublicationDetailPage({
 
       <p className="back-link">
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- static export; plain anchor avoids client-side RSC prefetch */}
-        <a href="/publications">← Back to publications</a>
+        <a href="/publications/">← Back to publications</a>
       </p>
     </article>
   );

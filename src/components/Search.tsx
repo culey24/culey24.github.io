@@ -34,9 +34,9 @@ const suggestions = [
 ];
 
 const quickLinks = [
-  { label: 'Projects', href: '/projects' },
-  { label: 'Publications', href: '/publications' },
-  { label: 'Blog', href: '/blogs' },
+  { label: 'Projects', href: '/projects/' },
+  { label: 'Publications', href: '/publications/' },
+  { label: 'Blog', href: '/blogs/' },
 ];
 
 export function Search({ posts }: { posts: SearchPost[] }) {
@@ -53,10 +53,10 @@ export function Search({ posts }: { posts: SearchPost[] }) {
       hits.push({ label: interest, href: '/', group: 'about' });
     }
     for (const proj of defaultCVData.projects) {
-      hits.push({ label: proj.title, href: '/projects', group: 'research', subtitle: proj.summary });
+      hits.push({ label: proj.title, href: `/projects/${proj.slug}/`, group: 'research', subtitle: proj.summary });
     }
     for (const pub of defaultCVData.publications ?? []) {
-      hits.push({ label: pub.title, href: '/publications', group: 'research', subtitle: pub.authors });
+      hits.push({ label: pub.title, href: `/publications/${pub.slug}/`, group: 'research', subtitle: pub.authors });
     }
     for (const exp of defaultCVData.experience) {
       hits.push({ label: exp.role, href: '/', group: 'research', subtitle: exp.company });
@@ -65,9 +65,9 @@ export function Search({ posts }: { posts: SearchPost[] }) {
       hits.push({ label: award.title, href: '/', group: 'research' });
     }
     for (const post of posts) {
-      hits.push({ label: post.title, href: `/blogs/${post.slug}`, group: 'blog', subtitle: post.excerpt });
+      hits.push({ label: post.title, href: `/blogs/${post.slug}/`, group: 'blog', subtitle: post.excerpt });
       for (const tag of post.tags) {
-        hits.push({ label: tag, href: `/tags#${tag}`, group: 'blog', subtitle: 'Tag' });
+        hits.push({ label: tag, href: `/tags/#${tag}`, group: 'blog', subtitle: 'Tag' });
       }
     }
     // Dedupe (same href + label can legitimately appear in several lists, e.g. "Generative AI")

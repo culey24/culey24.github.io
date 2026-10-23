@@ -22,19 +22,19 @@ export function BlogCard({ post }: BlogCardProps) {
             {post.title}
           </a>
         ) : (
-          <a href={`/blogs/${post.slug}`}>{post.title}</a>
+          <a href={`/blogs/${post.slug}/`}>{post.title}</a>
         )}
       </h2>
       <p className="blog-excerpt">{post.excerpt}</p>
       <div className="blog-tags">
         {post.tags.map((tag) => (
-          <a key={tag} className="tag" href={`/tags#${tag}`}>
+          <a key={tag} className="tag" href={`/tags/#${tag}`}>
             #{tag}
           </a>
         ))}
       </div>
       {!post.link && (
-        <a className="read-more" href={`/blogs/${post.slug}`}>
+        <a className="read-more" href={`/blogs/${post.slug}/`}>
           Read more →
         </a>
       )}

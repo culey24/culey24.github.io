@@ -22,6 +22,7 @@ export async function generateMetadata({
   return {
     title: `${post.title} — Bao Quach`,
     description: post.excerpt,
+    alternates: { canonical: `/blogs/${slug}/` },
   };
 }
 

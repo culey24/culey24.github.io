@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import type { ComponentType } from 'react';
 import { defaultCVData } from '../../src/cvData';
 import { getAllPosts } from '../../src/lib/blog';
@@ -14,6 +15,10 @@ import {
 } from '../../src/components/icons';
 
 const PREVIEW_LIMIT = 3;
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 interface SocialLink {
   label: string;
@@ -63,7 +68,7 @@ export default function HomePage() {
               <a className="btn btn-primary" href="/#projects">
                 View Projects
               </a>
-              <a className="btn btn-ghost" href="/cv">
+              <a className="btn btn-ghost" href="/cv/">
                 Curriculum Vitae
               </a>
             </div>
@@ -205,7 +210,7 @@ export default function HomePage() {
         <div className="section-head">
           <h2 className="section-title">Publications</h2>
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- static export; plain anchor avoids client-side RSC prefetch */}
-          <a className="section-more" href="/publications">
+          <a className="section-more" href="/publications/">
             See more <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -217,7 +222,7 @@ export default function HomePage() {
         <div className="section-head">
           <h2 className="section-title">Featured Projects</h2>
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- static export; plain anchor avoids client-side RSC prefetch */}
-          <a className="section-more" href="/projects">
+          <a className="section-more" href="/projects/">
             See more <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -271,7 +276,7 @@ export default function HomePage() {
           <div className="section-head">
             <h2 className="section-title">Featured Blogs</h2>
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- static export; plain anchor avoids client-side RSC prefetch */}
-            <a className="section-more" href="/blogs">
+            <a className="section-more" href="/blogs/">
               View detail <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -295,7 +300,7 @@ export default function HomePage() {
             <a className="btn btn-primary" href={`mailto:${personalInfo.email}`}>
               Email me
             </a>
-            <a className="btn btn-ghost" href="/contact">
+            <a className="btn btn-ghost" href="/contact/">
               Contact page <span aria-hidden="true">→</span>
             </a>
           </div>
