@@ -2,6 +2,8 @@ import type { ComponentType } from 'react';
 import { defaultCVData } from '../../src/cvData';
 import { getAllPosts } from '../../src/lib/blog';
 import { Header } from '../../src/components/Header';
+import { BackToTop } from '../../src/components/BackToTop';
+import { ScrollToTopOnNavigate } from '../../src/components/ScrollToTopOnNavigate';
 import { GithubIcon, LinkedinIcon, GlobeIcon, FileIcon, type IconProps } from '../../src/components/icons';
 
 interface SocialLink {
@@ -37,6 +39,7 @@ export default function HubLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="page">
+      <ScrollToTopOnNavigate />
       <Header posts={posts} />
       {children}
       <footer className="footer">
@@ -66,6 +69,7 @@ export default function HubLayout({ children }: { children: React.ReactNode }) {
         </span>
         <span className="footer-meta">Built with Next.js</span>
       </footer>
+      <BackToTop />
     </div>
   );
 }

@@ -114,6 +114,12 @@
 - Các link/button khác trong card (`a:not(.detail-link)`, `button`) đặt `position: relative; z-index: 1` để **vẫn bấm được** (GitHub / Demo / Visit publication / Certificate / tiêu đề publication).
 - Hover toàn card kích hoạt trạng thái hover của text link (đổi màu + gạch chân).
 
+### J. Back-to-top — `.back-to-top`
+- Nút tròn **44×44px**, cố định góc dưới-phải (`right/bottom: clamp(12px, 3vw, 28px)`), `z-index: 60`.
+- Ẩn mặc định (`opacity: 0; visibility: hidden; translateY(8px)`); hiện khi `.is-visible` (scrollY > 320).
+- Hover: viền `accent`, chữ `link`; focus-visible: outline 2px.
+- Tôn trọng `prefers-reduced-motion` (dùng `behavior: 'auto'` khi giảm chuyển động).
+
 ---
 
 ## 6. QUY TẮC PHÂN VAI (tránh lệch màu/kiểu)

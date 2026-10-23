@@ -132,6 +132,11 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 
 ## 10. NHẬT KÝ THAY ĐỔI (CHANGELOG)
 
+### [v0.14.0] - 2026-10-21
+* **Back-to-top:** thêm nút nổi góc dưới-phải (`.back-to-top`, 44px) hiện khi **cuộn > 320px**, click cuộn mượt về đầu trang; ẩn khi in, tôn trọng `prefers-reduced-motion` ([DESIGN_SYSTEM §5.J](DESIGN_SYSTEM.md), [FRONTEND_SPEC §10](FRONTEND_SPEC.md)).
+* **Chuyển trang có animation:** `ScrollToTopOnNavigate` bắt click link nội bộ khác route → **cuộn mượt về đầu trang rồi mới điều hướng** (~220ms); bỏ qua link ngoài / `target=_blank` / `mailto:`/`tel:` / hash cùng trang / `download`.
+* Đã verify bằng browser thật: nút hiện/ẩn đúng ngưỡng, click về top, chuyển tab thành công, không lỗi console.
+
 ### [v0.13.5] - 2026-10-21
 * **CV — bullet BKHome viết lại theo ý người dùng** (đã polish ngữ pháp): (1) core features của AI chatbot với **multi-domain university regulation documents**, trên **agent harness** + **hierarchical RAG**; (2) nền tảng **full-stack microservices** (React frontend + multi-service backend); (3) **deployed and ready to serve HCMUT CSE students**.
 * Nới lại spacing CV cho cân đối sau khi bullet ngắn lại (1 trang, lấp ~795/814pt).

@@ -186,6 +186,8 @@ Social icons (GitHub, LinkedIn, Website, link `/cv`) + `© {năm} {tên}` + "Bui
 ## 10. UI BEHAVIOUR
 
 - **Anchor & điều hướng:** link cùng trang dùng `/#id`; đóng mobile menu khi click.
+- **Back-to-top (v0.14.0):** nút tròn cố định góc dưới-phải (`.back-to-top`, 44px), **chỉ hiện khi `scrollY > 320`**; click → cuộn mượt về đầu trang. Ẩn khi in (`.no-print`), tôn trọng `prefers-reduced-motion`.
+- **Cuộn lên đầu khi chuyển trang (v0.14.0):** vì site dùng `<a>` (full page load), một handler bắt click link nội bộ khác route → **cuộn mượt về đầu trang rồi mới điều hướng** (~220ms), cho cảm giác chuyển tab có animation. Link ngoài, `target="_blank"`, `mailto:`/`tel:`, hash cùng trang và link `download` **không bị chặn**.
 - **Search:** chỉ chạy client-side; không gọi mạng.
 - **Print:** Header/Footer/action bar đều `.no-print`; section tránh ngắt trang.
 - **Responsive:** hamburger cho màn hình hẹp; grid card tự co theo breakpoint.
@@ -203,5 +205,7 @@ Social icons (GitHub, LinkedIn, Website, link `/cv`) + `© {năm} {tên}` + "Bui
 | `Projects` | Card dự án (tech tags, link GitHub/Demo) |
 | `Publications` | Danh sách publication (đánh số, in đậm tác giả) |
 | `CvDocument` / `CvPdfViewer` | CV dạng PDF (`@react-pdf/renderer`) cho `/cv` |
+| `BackToTop` | Nút nổi về đầu trang (hiện khi cuộn > 320px) |
+| `ScrollToTopOnNavigate` | Cuộn mượt về đầu trang trước khi chuyển route |
 | `BlogCard` / `PostView` | Card blog / render bài + TOC + prev-next |
 | `icons` | Factory `makeIcon` + bộ icon SVG inline |
