@@ -58,6 +58,15 @@
 
 > **Cập nhật (v0.8.0):** đã có **trang chi tiết theo item** `/projects/{slug}`, `/publications/{slug}` (`generateStaticParams` + `dynamicParams = false`) — trước đây chỉ có trang danh sách ([FRONTEND_SPEC §4.5](FRONTEND_SPEC.md)).
 
+### 3.1 CANONICAL & SEO (v0.15.0)
+
+- **URL chuẩn có `/` cuối** (`trailingSlash: true`) → `dist/<route>/index.html`. Mọi **link nội bộ** (nav, card, footer, search, breadcrumb) đều dùng dạng có `/` cuối để **tránh 301/308 redirect mỗi lần điều hướng**.
+- **`<link rel="canonical">`** khai báo cho từng trang qua `alternates.canonical` (home `/`, `/projects/`, `/publications/`, `/blogs/`, `/tags/`, `/contact/`, `/cv/`, và từng bài/dự án/publication chi tiết). `metadataBase = https://quachgiabao.com`.
+- **`app/sitemap.ts` → `/sitemap.xml`**: liệt kê URL canonical (10 URL hiện tại: 7 tĩnh + project/publication/blog detail).
+- **`app/robots.ts` → `/robots.txt`**: cho phép crawl toàn bộ + trỏ `Sitemap`.
+- **Biến thể host/protocol** (`http://`, `http://www.`, `https://www.`) redirect về canonical `https://quachgiabao.com/`. Google xếp chúng vào **"Page with redirect"** — **hành vi đúng**, không phải lỗi; chỉ bản canonical được index.
+- Sau khi deploy: **resubmit sitemap** trong Search Console, dùng **URL Inspection** cho các trang chính.
+
 ---
 
 ## 4. MÔ HÌNH DỮ LIỆU (DATA MODEL)
@@ -131,6 +140,11 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 ---
 
 ## 10. NHẬT KÝ THAY ĐỔI (CHANGELOG)
+
+### [v0.15.0] - 2026-10-21
+* **SEO / canonical:** chuẩn hoá **toàn bộ link nội bộ về dạng có `/` cuối** (khớp `trailingSlash: true`) để hết redirect khi điều hướng; thêm **`alternates.canonical`** cho mọi route (kể cả detail động); tách `/cv` thành server page + client viewer để có metadata.
+* **Sitemap & robots:** thêm `app/sitemap.ts` (`/sitemap.xml`, 10 URL canonical) và `app/robots.ts` (`/robots.txt` + trỏ sitemap).
+* **Làm rõ Search Console:** 3 URL bị báo *"Page with redirect"* là biến thể **http / www** trỏ về `https://quachgiabao.com/` — hành vi đúng, không phải lỗi index ([§3.1](SPECIFICATION.md)).
 
 ### [v0.14.0] - 2026-10-21
 * **Back-to-top:** thêm nút nổi góc dưới-phải (`.back-to-top`, 44px) hiện khi **cuộn > 320px**, click cuộn mượt về đầu trang; ẩn khi in, tôn trọng `prefers-reduced-motion` ([DESIGN_SYSTEM §5.J](DESIGN_SYSTEM.md), [FRONTEND_SPEC §10](FRONTEND_SPEC.md)).
