@@ -13,6 +13,7 @@
 - **Favicon:** [`public/favicon.svg`](../public/favicon.svg).
 - **Ảnh bìa blog mặc định:** [`public/images/blog-default.svg`](../public/images/blog-default.svg) — fallback khi bài viết không có `cover`.
 - **Icon xã hội/liên hệ:** SVG inline trong [`src/components/icons.tsx`](../src/components/icons.tsx) (`GithubIcon`, `LinkedinIcon`, `MailIcon`, `GlobeIcon`, `MapPinIcon`, `FileIcon`).
+- **Asset chữ ký email (v0.16.0):** [`public/signature/avatar.jpg`](../public/signature/avatar.jpg) — crop vuông **512×512** từ `myself.jpg` (anchor ~20% dọc, giống khung hero); [`hcmut-logo-on-light.png`](../public/signature/hcmut-logo-on-light.png) / [`hcmut-logo-on-dark.png`](../public/signature/hcmut-logo-on-dark.png) — logo HCMUT rộng **400px** (nền trong suốt), dùng cho nền sáng / nền tối.
 
 ---
 

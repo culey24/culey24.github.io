@@ -141,6 +141,9 @@ README trước đây mô tả một app **Vite/React** và 3 tính năng **khô
 
 ## 10. NHẬT KÝ THAY ĐỔI (CHANGELOG)
 
+### [v0.16.0] - 2026-10-30
+* **Asset chữ ký email:** thêm `public/signature/` — `avatar.jpg` (**512×512**, crop vuông từ `myself.jpg`, anchor ~20% dọc) và logo HCMUT rộng **400px** (`hcmut-logo-on-light.png`, `hcmut-logo-on-dark.png`, nền trong suốt). Giảm tổng dung lượng ~373KB → ~91KB. URL ổn định: `/signature/avatar.jpg`, `/signature/hcmut-logo-on-light.png`, `/signature/hcmut-logo-on-dark.png`.
+
 ### [v0.15.0] - 2026-10-21
 * **SEO / canonical:** chuẩn hoá **toàn bộ link nội bộ về dạng có `/` cuối** (khớp `trailingSlash: true`) để hết redirect khi điều hướng; thêm **`alternates.canonical`** cho mọi route (kể cả detail động); tách `/cv` thành server page + client viewer để có metadata.
 * **Sitemap & robots:** thêm `app/sitemap.ts` (`/sitemap.xml`, 10 URL canonical) và `app/robots.ts` (`/robots.txt` + trỏ sitemap).
