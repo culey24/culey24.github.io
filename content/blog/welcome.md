@@ -2,6 +2,7 @@
 title: "Welcome to my blog"
 date: "2026-09-30"
 tags: ["introduction", "nextjs"]
+draft: true # chỉ để tham khảo định dạng; không hiển thị trên site
 excerpt: "Đây là bài viết mẫu để nắm định dạng Markdown. Xóa file này và tạo các bài của bạn trong content/blog/."
 ---
 
@@ -57,6 +58,7 @@ excerpt: "Tóm tắt (tùy chọn)"
 series: "Tên chuỗi bài"  # tùy chọn — nhóm thành series
 order: 1                  # tùy chọn — vị trí trong series
 cover: "/images/post.png" # tùy chọn — ảnh bìa trên card
+draft: true               # tùy chọn — ẩn khỏi site, giữ trong repo
 ---
 ```
 

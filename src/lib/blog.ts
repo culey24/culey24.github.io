@@ -61,7 +61,12 @@ export function getAllSlugs(): string[] {
   return fs
     .readdirSync(blogDir)
     .filter((f) => f.endsWith('.md'))
-    .map((f) => f.replace(/\.md$/, ''));
+    .map((f) => f.replace(/\.md$/, ''))
+    .filter((slug) => {
+      // `draft: true` keeps a post in the repo (e.g. the format demo) but off the site.
+      const { data } = matter(fs.readFileSync(path.join(blogDir, `${slug}.md`), 'utf8'));
+      return data.draft !== true;
+    });
 }
 
 export function getPostBySlug(slug: string): BlogPostData {
