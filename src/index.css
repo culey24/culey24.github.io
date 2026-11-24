@@ -2,31 +2,31 @@
 /* Design: audience = recruiters & academics · use = showcase work + access CV · tone = technical, austere */
 
 :root {
-  /* hugo-profile palette (light) */
-  --color-paper: #eaedf0;
-  --color-paper-2: #f8f9fa;
-  --color-paper-3: #e2e6ea;
-  --color-ink: #343a40;
-  --color-ink-2: #6c757d;
-  --color-ink-3: #8b959e;
-  --color-rule: #d7dde3;
-  --color-accent: #007bff;
-  --color-accent-2: #0056b3;
-  --color-accent-alt: #7c3aed;
-  --color-accent-alt-2: #5b21b6;
-  --color-success: #15803d;
-  --color-warning: #b45309;
-  --color-danger: #dc2626;
+  /* hugo-profile palette (light, high contrast) */
+  --color-paper: #f6f7f9;
+  --color-paper-2: #fdfdfe;
+  --color-paper-3: #eceef2;
+  --color-ink: #17191c;
+  --color-ink-2: #3a3f46;
+  --color-ink-3: #4b5057;
+  --color-rule: #8a919b;
+  --color-accent: #15417a;
+  --color-accent-2: #0f315c;
+  --color-accent-alt: #4c1d95;
+  --color-accent-alt-2: #3b1578;
+  --color-success: #0f5533;
+  --color-warning: #6f4207;
+  --color-danger: #8f1717;
   --color-info: var(--color-accent);
   --color-link: var(--color-accent);
   --color-solid: var(--color-ink);
   --color-solid-ink: #ffffff;
   --color-focus: var(--color-accent);
-  --color-accent-light: rgba(0, 123, 255, 0.1);
+  --color-accent-light: rgba(21, 65, 122, 0.1);
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-sm: 0 1px 2px rgba(20, 24, 30, 0.07);
+  --shadow-md: 0 4px 10px rgba(20, 24, 30, 0.09);
+  --shadow-lg: 0 16px 40px rgba(20, 24, 30, 0.13);
 
   /* type */
   --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -56,29 +56,29 @@
 }
 
 [data-theme='dark'] {
-  --color-paper: #18191a;
-  --color-paper-2: #212529;
-  --color-paper-3: #2b3036;
-  --color-ink: #e4e6eb;
-  --color-ink-2: #b0b3b8;
-  --color-ink-3: #8d9196;
-  --color-rule: #343a40;
-  --color-accent: #6ea8fe;
-  --color-accent-2: #9ec5fe;
-  --color-accent-alt: #c4b5fd;
-  --color-accent-alt-2: #ddd6fe;
-  --color-success: #4ade80;
-  --color-warning: #fbbf24;
-  --color-danger: #f87171;
+  --color-paper: #181a1d;
+  --color-paper-2: #202327;
+  --color-paper-3: #282c31;
+  --color-ink: #f2f4f7;
+  --color-ink-2: #c9cfd6;
+  --color-ink-3: #b6bdc6;
+  --color-rule: #454e57;
+  --color-accent: #93c5fd;
+  --color-accent-2: #bfdbfe;
+  --color-accent-alt: #cfc4ff;
+  --color-accent-alt-2: #e2dbff;
+  --color-success: #5ee394;
+  --color-warning: #f8c14e;
+  --color-danger: #ffa5a5;
   --color-info: var(--color-accent);
   --color-link: var(--color-accent);
   --color-solid: var(--color-ink);
   --color-solid-ink: var(--color-paper);
   --color-focus: var(--color-accent);
-  --color-accent-light: rgba(110, 168, 254, 0.16);
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 16px 40px oklch(0% 0 0 / 0.6);
+  --color-accent-light: rgba(147, 197, 253, 0.14);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.65);
 }
 
 /* Global Reset */
@@ -642,15 +642,15 @@ html {
 }
 
 .terminal-dot-red {
-  background: #f87171;
+  background: var(--color-danger);
 }
 
 .terminal-dot-yellow {
-  background: #fbbf24;
+  background: var(--color-warning);
 }
 
 .terminal-dot-green {
-  background: #34d399;
+  background: var(--color-success);
 }
 
 .terminal-title {
@@ -670,7 +670,7 @@ html {
 }
 
 .t-prompt {
-  color: #059669;
+  color: var(--color-success);
 }
 
 .t-out {
@@ -683,7 +683,7 @@ html {
   height: 13px;
   margin-left: 2px;
   vertical-align: text-bottom;
-  background-color: #059669;
+  background-color: var(--color-success);
   animation: caret-blink 1.1s steps(2, start) infinite;
 }
 
@@ -2098,7 +2098,7 @@ a.tag:hover {
 
   .card {
     background-color: #ffffff !important;
-    border: 1px solid #dddddd !important;
+    border: 1px solid #949494 !important;
     box-shadow: none !important;
   }
 
@@ -2111,7 +2111,7 @@ a.tag:hover {
   }
 
   .tag {
-    border-color: #cccccc;
+    border-color: #949494;
   }
 }
 
